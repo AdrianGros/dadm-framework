@@ -89,7 +89,7 @@ This repository documents DAD-M as a public framework artifact. The current focu
 
 A DAD-M Education variant is also being documented as a work-in-progress extension for validated learning and knowledge-building workflows. A public summary for that variant is available in [docs/variants/education.md](docs/variants/education.md).
 
-Known current usage context: the framework is used regularly in project context by project managers in a Deutsche Telekom Technik environment. This repository does not claim formal approval, company-wide adoption, or enterprise validation.
+Known current usage context: the framework is used regularly in project context by project managers in the FTTH environment. This repository does not claim formal approval, company-wide adoption, or enterprise validation.
 
 ## Author / context
 
