@@ -2,11 +2,11 @@
 
 DAD-M is a structured framework for AI-assisted project work. It separates analysis, design, implementation, and validation into four explicit phases: Discover, Apply, Deploy, and Monitor.
 
-The repository is published as a public method artifact for people who want a more controlled alternative to ad-hoc prompting.
+The repository is published as a public method repository for people who want a more controlled alternative to ad-hoc prompting.
 
 ## What DAD-M is
 
-DAD-M is a reusable operating model for projects that need more than ad-hoc prompting. It is designed around milestones, documented artifacts, and repeatable outputs instead of one-off chats.
+DAD-M is a reusable operating model for projects that need more than ad-hoc prompting. It is designed around milestones, documented outputs, and repeatable delivery instead of one-off chats.
 
 ## Why DAD-M exists
 
@@ -53,7 +53,7 @@ It is most useful when work needs reviewable outputs, explicit scope boundaries,
 The repository uses one dominant layout:
 
 - `docs/` for public explanation and onboarding
-- `framework/core/` for the canonical method artifacts
+- `framework/core/` for the canonical method documents
 - `framework/templates/` for reusable framework templates
 - `governance/` for operating rules and evidence boundaries
 
@@ -89,7 +89,7 @@ DAD-M is intentionally strict about workflow boundaries. Discover is for facts, 
 
 ## Project status
 
-This repository documents DAD-M as a public framework artifact. The current focus is a clear method overview, practical starting guidance, and conservative governance notes.
+This repository documents DAD-M as a public framework repository. The current focus is a clear method overview, practical starting guidance, and conservative governance notes.
 
 A DAD-M Education variant is also being documented as an early public extension for validated learning and knowledge-building workflows. A public summary for that variant is available in [docs/variants/education.md](docs/variants/education.md).
 
@@ -97,4 +97,4 @@ This repository does not claim formal approval, organization-wide adoption, or e
 
 ## Author / context
 
-Curated as a public GitHub repository for explaining and applying the DAD-M method.
+This repository is curated as a public GitHub repository for explaining and applying the DAD-M method.
