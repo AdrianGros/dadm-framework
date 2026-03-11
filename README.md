@@ -2,6 +2,8 @@
 
 DAD-M is a structured framework for AI-assisted project work. It separates analysis, design, implementation, and validation into four explicit phases: Discover, Apply, Deploy, and Monitor.
 
+The repository is published as a public method artifact for people who want a more controlled alternative to ad-hoc prompting.
+
 ## What DAD-M is
 
 DAD-M is a reusable operating model for projects that need more than ad-hoc prompting. It is designed around milestones, documented artifacts, and repeatable outputs instead of one-off chats.
@@ -36,6 +38,8 @@ DAD-M is useful for people who need structure around AI-assisted delivery, espec
 - automation workflows
 - project planning with explicit milestones
 
+It is most useful when work needs reviewable outputs, explicit scope boundaries, and milestone-by-milestone control.
+
 ## How to start
 
 1. Read the method summary in [docs/overview.md](docs/overview.md).
@@ -59,7 +63,7 @@ Key pages:
 - [docs/getting-started.md](docs/getting-started.md): step-by-step first use
 - [docs/use-cases.md](docs/use-cases.md): where the framework fits and where it does not
 - [docs/examples/rbac-case-example.md](docs/examples/rbac-case-example.md): public milestone example for a technical access-control design
-- [docs/variants/education.md](docs/variants/education.md): work-in-progress variant for validated learning and knowledge-building workflows
+- [docs/variants/education.md](docs/variants/education.md): early public variant for validated learning and knowledge-building workflows
 - [framework/core/phases.md](framework/core/phases.md): phase definitions and boundaries
 - [framework/core/milestones.md](framework/core/milestones.md): milestone design
 - [framework/core/deliverables.md](framework/core/deliverables.md): expected outputs and proof format
@@ -87,12 +91,10 @@ DAD-M is intentionally strict about workflow boundaries. Discover is for facts, 
 
 This repository documents DAD-M as a public framework artifact. The current focus is a clear method overview, practical starting guidance, and conservative governance notes.
 
-A DAD-M Education variant is also being documented as a work-in-progress extension for validated learning and knowledge-building workflows. A public summary for that variant is available in [docs/variants/education.md](docs/variants/education.md).
+A DAD-M Education variant is also being documented as an early public extension for validated learning and knowledge-building workflows. A public summary for that variant is available in [docs/variants/education.md](docs/variants/education.md).
 
-Known current usage context: the framework is used regularly in project context by project managers in the FTTH environment. This repository does not claim formal approval, company-wide adoption, or enterprise validation.
+This repository does not claim formal approval, organization-wide adoption, or enterprise validation.
 
 ## Author / context
 
-Author: Adrian Christian Groszewski
-
-This repository is curated as a public GitHub artifact for explaining and applying the DAD-M method.
+Curated as a public GitHub repository for explaining and applying the DAD-M method.

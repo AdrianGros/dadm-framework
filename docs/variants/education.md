@@ -1,6 +1,6 @@
 # DAD-M Education
 
-DAD-M Education is a work-in-progress variant of the core DAD-M framework for learning, explanation, analysis, and knowledge-building tasks.
+DAD-M Education is an early public variant of the core DAD-M framework for learning, explanation, analysis, and knowledge-building tasks.
 
 It keeps the same Discover, Apply, Deploy, Monitor cycle, but shifts the emphasis from implementation delivery toward validated learning workflows.
 
@@ -74,4 +74,4 @@ The education variant shows that DAD-M can be adapted beyond implementation-focu
 
 ## Current public status
 
-This variant is documented here as a work in progress. The public repository currently summarizes the operating logic and deliverable shape rather than publishing a full prompt pack.
+This variant is documented here in an early public form. The repository currently summarizes the operating logic and deliverable shape rather than publishing a full prompt pack.
