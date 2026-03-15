@@ -97,4 +97,4 @@ This repository does not claim formal approval, organization-wide adoption, or e
 
 ## Author / context
 
-This repository is curated as a public GitHub repository for explaining and applying the DAD-M method.
+I curated this Repository in a wyay that hopefully helps with structuring your projects and uses the key advantages of agentoc systems while keeping responsibility firmly in the hands of human operators.  
