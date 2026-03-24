@@ -23,17 +23,41 @@ Decide what the AI-assisted workflow may and may not touch:
 - whether network access is allowed
 - which proofs are required
 
-## 3. Build the milestone plan
+## 3. Declare scope
 
-The starter material uses a milestone model rather than one large task. A typical planning pattern in the source material is 10 to 20 milestones, each with:
+List the specific files, folders, systems, or domains this project is allowed to touch.
+Anything not listed is off limits by default. This is the scope declaration — write it
+before the milestone plan, because the milestone plan references it.
+
+## 4. Build the milestone plan
+
+DAD-M uses a milestone model rather than one large task. A typical project has 10 to 20
+milestones, each with:
 
 - goal
 - scope
 - deliverables
 - acceptance criteria
-- risks
+- risks (each with a severity label: `info` / `low` / `medium` / `high` / `critical`)
+- dependencies (which milestones must complete before this one starts; write `none` if there are none)
+- priority (P1 = required to function; P2 = important but not blocking; P3 = deferrable)
 
-## 4. Run the first cycle
+## 5. Obtain plan approval
+
+After the milestone plan is written, record an approval artifact before starting M1:
+
+```
+artifact: milestone-plan-approval
+plan-version: <version>
+status: approved | rejected | deferred
+date: <YYYY-MM-DD>
+decided-by: <name or role>
+```
+
+This artifact is immutable. Work on M1 must not begin without an approved plan.
+See `governance/policies/approval-policy.yaml` for the operative rules.
+
+## 6. Run the first cycle
 
 For milestone M1, work through the four phases in order:
 
@@ -42,7 +66,7 @@ For milestone M1, work through the four phases in order:
 3. Deploy: implement the approved design and record proofs.
 4. Monitor: validate the result and capture follow-up actions.
 
-## 5. Repeat per milestone
+## 7. Repeat per milestone
 
 The Monitor output is not the end of the method. It becomes the starting point for the next Discover step.
 

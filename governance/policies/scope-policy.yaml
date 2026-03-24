@@ -1,0 +1,28 @@
+# Scope Policy — operative form of governance/guardrails.md (scope compliance) and
+# framework/core/bootstrap.md (scope declaration)
+# This file is the machine-readable counterpart to the Markdown documentation.
+# When the two conflict, update both and resolve the conflict explicitly.
+
+version: 1
+
+scope_declaration:
+  required_at: bootstrap
+  format: one_item_per_line
+  instruction: List specific files, folders, systems, or domains this project may touch.
+  default_stance: anything_not_listed_is_off_limits
+
+scope_violation:
+  definition: Any write or modification outside the declared scope without explicit approval.
+  default_action: human_decision
+  # Category override: any severity → human_decision (see severity-policy.yaml)
+
+allowed_scope_changes:
+  # Scope may only be extended through explicit human approval:
+  required_artifact: human-decision-record
+  artifact_class: immutable
+  template: framework/templates/human-decision-record.md
+
+cross_milestone_scope_change:
+  definition: A change that affects deliverables or scope of a milestone other than the current one.
+  default_action: human_decision
+  # Triggers mandatory human decision regardless of severity.

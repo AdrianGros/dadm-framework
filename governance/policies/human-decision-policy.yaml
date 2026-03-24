@@ -1,0 +1,28 @@
+# Human Decision Policy — operative form of guardrails.md (Human decision triggers section)
+# This file is the machine-readable counterpart to the Markdown documentation.
+
+version: 1
+
+required_triggers:
+  - critical_finding_any_phase
+  - high_or_critical_security_or_privacy
+  - cross_milestone_scope_change
+  - dependency_change_not_in_safety_boundaries
+  - rework_limit_reached
+  - strategic_architecture_tradeoff_no_clear_option
+
+allowed_human_actions:
+  - approve
+  - reject
+  - modify
+  - defer
+
+required_decision_fields:
+  - concise_summary
+  - blocking_reasons
+  - options_with_risks
+  - recommended_option
+  - evidence_refs
+
+artifact_class: immutable
+template: framework/templates/human-decision-record.md

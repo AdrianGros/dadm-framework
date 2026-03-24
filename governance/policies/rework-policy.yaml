@@ -1,0 +1,39 @@
+# Rework Policy — operative form of governance/rework-and-escalation.md
+# This file is the machine-readable counterpart to the Markdown documentation.
+# When the two conflict, update both and resolve the conflict explicitly.
+# Action vocabulary: allow | allow_with_notes | rework | escalate | block | human_decision
+
+version: 1
+
+default_rework_limit: 2
+
+rework_conditions:
+  # All conditions must hold for rework to apply
+  - finding_within_current_milestone_scope
+  - severity_is_medium_or_high
+  - no_category_override_requires_human_decision
+  - rework_attempt_counter_below_limit
+
+escalation_triggers:
+  - rework_limit_reached_without_resolution
+  - same_finding_recurs_across_multiple_attempts
+  - finding_scope_extends_beyond_current_milestone
+  - module_or_check_produces_error_state
+
+escalation_action: human_decision
+
+rework_attempt_record:
+  required_fields:
+    - finding_ref
+    - attempt
+    - action_taken
+    - result
+  allowed_result_values:
+    - resolved
+    - unresolved
+  artifact_class: immutable
+
+override_rework_limit:
+  # To override for a specific project, declare in safety boundaries:
+  # rework-limit: <number>
+  instruction: declare_in_safety_boundaries

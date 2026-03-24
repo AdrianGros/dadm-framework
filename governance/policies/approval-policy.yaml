@@ -1,0 +1,30 @@
+# Approval Policy — operative form of framework/core/bootstrap.md (Approval checkpoint)
+# This file is the machine-readable counterpart to the Markdown documentation.
+# When the two conflict, update both and resolve the conflict explicitly.
+
+version: 1
+
+milestone_plan_approval:
+  artifact_name: milestone-plan-approval
+  artifact_class: immutable
+  template: framework/core/bootstrap.md
+
+  required_fields:
+    - plan_version
+    - status
+    - date
+    - decided_by
+
+  optional_fields:
+    - notes
+
+  allowed_status_values:
+    - approved
+    - rejected
+    - deferred
+
+  rules:
+    - Work on M1 must not begin until an approved artifact exists.
+    - If the plan changes significantly, a new version must be created and re-approved.
+    - The previous approval record must not be deleted or modified.
+    - A rejected or deferred status means work does not start until a new approval is obtained.

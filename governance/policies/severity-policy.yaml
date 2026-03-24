@@ -1,0 +1,55 @@
+# Severity Policy — operative form of governance/severity-framework.md
+# This file is the machine-readable counterpart to the Markdown documentation.
+# When the two conflict, update both and resolve the conflict explicitly.
+# Action vocabulary: allow | allow_with_notes | rework | escalate | block | human_decision
+
+version: 2
+
+levels:
+  info:
+    default_action: allow_with_notes
+  low:
+    default_action: allow_with_notes
+  medium:
+    default_action: rework
+  high:
+    default_action: rework
+  critical:
+    default_action: human_decision
+
+category_overrides:
+  security:
+    high: human_decision
+    critical: human_decision
+  privacy:
+    medium: human_decision
+    high: human_decision
+    critical: human_decision
+  scope_violation:
+    # any severity triggers human decision — list all levels explicitly
+    info: human_decision
+    low: human_decision
+    medium: human_decision
+    high: human_decision
+    critical: human_decision
+  cross_milestone_change:
+    # any severity triggers human decision — list all levels explicitly
+    info: human_decision
+    low: human_decision
+    medium: human_decision
+    high: human_decision
+    critical: human_decision
+  architecture_decision_in_deploy:
+    # block = stop Deploy; the phase must return to Apply before continuing
+    # this is a deterministic redirect, not a human decision trigger
+    info: block
+    low: block
+    medium: block
+    high: block
+    critical: block
+  style_convention:
+    low: allow_with_notes
+    medium: allow_with_notes
+  dead_code:
+    low: allow_with_notes
+    medium: allow_with_notes

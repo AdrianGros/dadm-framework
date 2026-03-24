@@ -1,15 +1,23 @@
 # RBAC Milestone Example
 
-This page is a public DAD-M milestone example for designing a role-based access control system in a modular community operations platform.
+This page is a public DAD-M milestone example for designing a role-based access control
+system in a modular community operations platform.
 
-It is intentionally anonymized. Product-specific names, internal labels, environment details, and operational identifiers have been removed or generalized. The goal is to show how DAD-M structures a technical architecture milestone, not to reproduce an internal implementation brief line by line.
+It is intentionally anonymized. Product-specific names, internal labels, environment
+details, and operational identifiers have been removed or generalized. The goal is to
+show how DAD-M structures a technical architecture milestone, not to reproduce an
+internal implementation brief line by line.
 
 ## What this example demonstrates
 
+- the complete milestone definition format (all required fields)
 - how Discover separates access analysis from solution design
 - how Apply turns that analysis into a concrete RBAC architecture
 - how Deploy prepares rollout, migration, and safe defaults
 - how Monitor keeps the authorization model reviewable over time
+- severity-labeled risks at each phase
+- the standard phase output format (Status, Input Summary, Artifacts, Risks, Next Step)
+- the decision log as an append-only record
 
 ## Public source treatment
 
@@ -19,19 +27,62 @@ For this public version, the original source material was handled in three bucke
 - anonymized: project name, module names, role labels tied to a specific community, and product-specific operator language
 - excluded: live-environment references, internal identifiers, and any implementation detail not needed to explain the method
 
-## Milestone context
+---
 
-The example milestone assumes a system that already has multiple modules, administrative actions, and user-facing workflows. The task is to replace ad-hoc permission checks with a reusable authorization model that can later support database persistence, audit logging, and additional interfaces.
+## Milestone definition
+
+**goal:** Design and specify a reusable RBAC authorization model to replace ad-hoc permission checks.
+
+**scope:**
+- Authorization model definition (entities, permission registry, role-permission mapping)
+- Access evaluation principles and check pattern
+- Rollout and migration plan
+- Monitor checklist for ongoing compliance
+
+**constraints:**
+- Must not weaken currently active access controls during transition
+- Permission names must follow the established namespace convention
+- No live-environment data may appear in any public artifact
+
+**deliverables:**
+- Protected-action matrix (Discover)
+- Role-family and permission mapping (Discover + Apply)
+- Architecture specification with data model and check pattern (Apply)
+- Migration and rollout plan (Deploy)
+- Monitor checklist (Monitor)
+
+**acceptance criteria:**
+- All role families are defined with example permissions
+- Deny-by-default principle is explicit in the architecture
+- Scope model covers global, tenant, module, and own_resource
+- Rollout order ensures no security regression
+- Monitor checklist covers permission creep and scope drift
+
+**risks and assumptions:**
+
+| Severity | Risk |
+| --- | --- |
+| `medium` | Role names may drift into business-language overload if not normalized early |
+| `medium` | Scope handling can become inconsistent if entry points and services evaluate it differently |
+| `low` | Permission registry may not cover all edge cases discovered during Deploy |
+| `info` | Emergency override paths not specified in this milestone; must be documented separately |
+
+**dependencies:** none
+
+**priority:** P1
 
 ---
 
 ## Discover
 
+**phase-state:** COMPLETED
+
 ### Goal
 
-Understand which actions must be protected, which role families are needed, and where authorization decisions should live in the architecture.
+Understand which actions must be protected, which role families are needed, and where
+authorization decisions should live in the architecture.
 
-### Example protected-action inventory
+### Protected-action inventory
 
 | Area | Example actions | Why protection is needed |
 | --- | --- | --- |
@@ -41,7 +92,7 @@ Understand which actions must be protected, which role families are needed, and 
 | workflow modules | read records, update records, close records | requires separation between read and manage rights |
 | system administration | manage seeds, inspect audit data, override blocked workflows | highest-risk actions |
 
-### Example role families
+### Role families
 
 | Role family | Purpose |
 | --- | --- |
@@ -68,16 +119,14 @@ Use a predictable namespace so permissions remain readable and expandable:
 
 ### Scope model
 
-This example separates permission names from where they apply:
-
-- `global`: applies across the whole platform
-- `tenant`: applies only inside one tenant or workspace boundary
-- `module`: applies to a specific subsystem
-- `own_resource`: applies only to resources owned by the acting user
+- `global` — applies across the whole platform
+- `tenant` — applies only inside one tenant or workspace boundary
+- `module` — applies to a specific subsystem
+- `own_resource` — applies only to resources owned by the acting user
 
 ### Architecture impact analysis
 
-The Discover phase should identify where authorization decisions currently appear or should appear:
+Authorization decisions currently appear or should appear at:
 
 - entry points such as commands, endpoints, or operator actions
 - service boundaries where business rules should be enforced
@@ -85,33 +134,46 @@ The Discover phase should identify where authorization decisions currently appea
 - audit/logging paths for denied actions and privileged operations
 - persistence requirements for roles, permissions, and assignments
 
-### Risks and open decisions
+### Phase output — Discover
 
-- role names may drift into business-language overload if not normalized early
-- role checks can become too broad if permissions are not separated from role labels
-- scope handling can become inconsistent if entry points and services evaluate it differently
-- emergency override paths can silently weaken the model if they are not explicitly documented
+**Status:** complete
 
-### Discover deliverables
+**Input Summary:** Milestone definition, system context description, existing permission check patterns.
 
-- protected-action matrix
-- role-family matrix
-- permission naming rules
-- scope model
-- architecture impact summary
-- open decisions and risks
+**Artifacts:**
+
+| Artifact | Retention |
+| --- | --- |
+| Protected-action matrix (this document) | `immutable` |
+| Role-family matrix (this document) | `immutable` |
+| Permission naming rules (this document) | `immutable` |
+| Scope model (this document) | `immutable` |
+| Architecture impact summary (this document) | `immutable` |
+
+**Risks and Assumptions:**
+
+| Severity | Entry |
+| --- | --- |
+| `medium` | Role names may drift into business overload — must be enforced via naming rules before Apply closes |
+| `low` | Emergency override paths are not in scope; must be documented as a follow-up milestone |
+| `info` | Permission inventory covers example actions only; additional protected actions may emerge during Apply |
+
+**Next Step:** Apply — design the RBAC architecture from the Discover findings.
 
 ---
 
 ## Apply
 
+**phase-state:** COMPLETED
+
 ### Goal
 
-Turn the authorization analysis into a reusable RBAC architecture with clear entities, central permission resolution, and testable access checks.
+Turn the authorization analysis into a reusable RBAC architecture with clear entities,
+central permission resolution, and testable access checks.
 
-### Chosen public architecture
+### Architecture
 
-The public example uses five persistent core entities:
+Five persistent core entities:
 
 - `users`
 - `roles`
@@ -119,7 +181,7 @@ The public example uses five persistent core entities:
 - `user_roles`
 - `role_permissions`
 
-Runtime evaluation is handled through a small authorization layer:
+Runtime evaluation through a small authorization layer:
 
 - permission registry for canonical names
 - role service for assignment operations
@@ -127,7 +189,7 @@ Runtime evaluation is handled through a small authorization layer:
 - access-check helper or decorator for central enforcement
 - audit hook for denials and sensitive actions
 
-### Example data-model shape
+### Data model
 
 | Entity | Purpose |
 | --- | --- |
@@ -137,7 +199,7 @@ Runtime evaluation is handled through a small authorization layer:
 | user_roles | assigns roles to users, optionally with scope |
 | role_permissions | binds permissions to roles, optionally with scope rules |
 
-### Example mapping
+### Role-to-permission mapping
 
 | Role family | Example permissions |
 | --- | --- |
@@ -168,8 +230,6 @@ def require_permission(actor, permission_name, scope):
 
 ### Test concept
 
-The example test plan covers:
-
 - positive permission resolution
 - deny-by-default behavior
 - multiple-role aggregation
@@ -178,22 +238,42 @@ The example test plan covers:
 - scope mismatch failures
 - denial logging for rejected access
 
-### Apply deliverables
+### Phase output — Apply
 
-- architecture overview
-- schema draft
-- file-structure proposal
-- role-to-permission mapping
-- check-helper pattern
-- test concept
+**Status:** complete
+
+**Input Summary:** Discover phase output — protected-action matrix, role families, permission naming rules, scope model, architecture impact summary.
+
+**Artifacts:**
+
+| Artifact | Retention |
+| --- | --- |
+| Architecture specification (this document) | `immutable` |
+| Data model (this document) | `immutable` |
+| Role-to-permission mapping (this document) | `immutable` |
+| Check pattern (this document) | `immutable` |
+| Test concept (this document) | `immutable` |
+
+**Risks and Assumptions:**
+
+| Severity | Entry |
+| --- | --- |
+| `medium` | Check pattern assumes a centralized permission resolver; distributed service calls that bypass this resolver would silently weaken the model |
+| `low` | Test concept covers authorization layer only; integration tests across module boundaries are out of scope for this milestone |
+| `info` | Data model uses five core entities; additional entities (e.g., permission groups) may be needed for future extensions |
+
+**Next Step:** Deploy — implement the approved architecture and prepare rollout.
 
 ---
 
 ## Deploy
 
+**phase-state:** COMPLETED
+
 ### Goal
 
-Prepare the RBAC model for safe introduction into an existing system without weakening current controls.
+Prepare the RBAC model for safe introduction into an existing system without weakening
+current controls.
 
 ### Rollout considerations
 
@@ -203,7 +283,7 @@ Prepare the RBAC model for safe introduction into an existing system without wea
 - integrate checks at entry points first, then harden service boundaries
 - keep default permissions narrow during rollout
 
-### Example rollout order
+### Rollout order
 
 1. Introduce schema and permission registry.
 2. Seed baseline permissions and conservative role bundles.
@@ -217,17 +297,57 @@ Prepare the RBAC model for safe introduction into an existing system without wea
 - gate new enforcement behind a documented rollout switch if needed
 - record denial spikes and broken workflows before widening permissions
 
-### Deploy deliverables
+### Phase output — Deploy
 
-- migration plan
-- seed plan
-- rollout order
-- rollback strategy
-- denial logging plan
+**Status:** complete
+
+**Input Summary:** Apply phase output — architecture specification, data model, check pattern, test concept.
+
+**Implementation Summary:** RBAC schema, permission registry, role-service, permission resolver, access-check helper, and audit hook defined and specified. Rollout order and rollback strategy documented.
+
+**Files Changed:** (in a real project, list specific files; this example uses placeholder format)
+
+- `db/migrations/` — schema for users, roles, permissions, user_roles, role_permissions
+- `src/auth/` — permission registry, role service, permission resolver, access-check helper
+- `src/audit/` — denial logging hook
+
+**Proofs:** (in a real project, list concrete evidence; example types)
+
+- Test suite covers all test concept scenarios (positive resolution, deny-by-default, scope mismatch)
+- Seeded roles verified against role-to-permission mapping
+
+**Acceptance Checklist:**
+
+- [x] All role families defined with example permissions
+- [x] Deny-by-default principle implemented in check helper
+- [x] Scope model covers global, tenant, module, own_resource
+- [x] Rollout order ensures no security regression
+- [x] Denial logging active before rollout begins
+
+**Artifacts:**
+
+| Artifact | Retention |
+| --- | --- |
+| Migration plan (this document) | `immutable` |
+| Seed plan (this document) | `immutable` |
+| Rollout order (this document) | `immutable` |
+| Rollback strategy (this document) | `immutable` |
+
+**Risks and Assumptions:**
+
+| Severity | Entry |
+| --- | --- |
+| `high` | If denial spikes appear after rollout, the rollback window must be kept open until root cause is confirmed |
+| `medium` | Service-level authorization (bypassing entry-point checks) is not covered; must be addressed in a follow-up milestone |
+| `info` | Rollout switch adds temporary complexity; remove it once rollout is complete |
+
+**Next Step:** Monitor — validate that the authorization model remains correct and maintainable.
 
 ---
 
 ## Monitor
+
+**phase-state:** COMPLETED
 
 ### Goal
 
@@ -235,12 +355,12 @@ Verify that the authorization model remains correct, narrow, and maintainable af
 
 ### Control checklist
 
-- are permissions resolved correctly for each scope type
-- are any roles broader than they need to be
-- are common workflows missing required permissions
-- are denied actions logged clearly enough for investigation
-- do new modules follow the same naming and scope rules
-- is permission creep visible in role bundles over time
+- [ ] Permissions resolved correctly for each scope type
+- [ ] No roles broader than they need to be
+- [ ] Common workflows have required permissions
+- [ ] Denied actions logged clearly enough for investigation
+- [ ] New modules follow the same naming and scope rules
+- [ ] Permission creep is not visible in role bundles over time
 
 ### Typical failure scenarios
 
@@ -250,16 +370,58 @@ Verify that the authorization model remains correct, narrow, and maintainable af
 - denials are not logged, making failures hard to diagnose
 - new modules invent inconsistent permission names
 
-### Monitor deliverables
+### Phase output — Monitor
 
-- audit checklist
-- review points for role breadth
-- common failure scenarios
-- extension recommendations
-- refactor notes for future modules
+**Status:** complete
+
+**Input Summary:** Deploy phase output — implemented RBAC model, rollout result, denial logs.
+
+**Artifacts:**
+
+| Artifact | Retention |
+| --- | --- |
+| Monitor checklist (this document) | `immutable` |
+| Failure scenario registry (this document) | `immutable` |
+
+**Risks and Assumptions:**
+
+| Severity | Entry |
+| --- | --- |
+| `medium` | Permission creep is a persistent risk; the control checklist must be re-run at the start of each subsequent milestone that adds new roles or permissions |
+| `low` | Service-level bypass risk (identified in Deploy) remains open; carry forward to next Discover |
+
+**Next Step:** Carry open risks (service-level bypass) into next Discover as documented inputs.
+
+---
+
+## Decision log
+
+```
+date: <project date>
+decision: deny-by-default adopted as the access-evaluation baseline
+reason: any permission model that grants by default requires exhaustive coverage to remain secure; deny-by-default limits the blast radius of missing permission definitions
+decided-by: human
+refs: Apply phase output (access-evaluation principles)
+```
+
+```
+date: <project date>
+decision: emergency override paths excluded from this milestone scope
+reason: emergency paths require separate security review; including them would expand scope beyond the defined milestone boundary
+decided-by: human
+refs: Discover phase output (risks and assumptions)
+```
 
 ---
 
 ## Why this is a useful DAD-M example
 
-This example shows the value of DAD-M on a technical milestone that could easily collapse into unstructured implementation. Discover keeps the access problem factual. Apply defines the model before code spreads. Deploy treats rollout as part of the solution instead of an afterthought. Monitor keeps the permission system from quietly drifting into over-privileged behavior.
+This example shows the value of DAD-M on a technical milestone that could easily
+collapse into unstructured implementation. Discover keeps the access problem factual.
+Apply defines the model before code spreads. Deploy treats rollout as part of the
+solution instead of an afterthought. Monitor keeps the permission system from quietly
+drifting into over-privileged behavior.
+
+The structure also demonstrates the severity scale in practice: `high` risks require
+active attention before the phase closes, `medium` risks are tracked and carried forward,
+and `info` entries document assumptions without blocking progress.
