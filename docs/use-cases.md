@@ -27,4 +27,4 @@ The method is strongest when teams need:
 - repeatable output formats
 - a controlled way to iterate with AI support
 
-One work-in-progress variant in this repository is DAD-M Education. It applies the same cycle to learning and knowledge-building tasks, with stronger emphasis on validation before explanation.
+One early public variant in this repository is DAD-M Education. It applies the same cycle to learning and knowledge-building tasks, with stronger emphasis on validation before explanation.

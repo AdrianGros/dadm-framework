@@ -2,9 +2,11 @@
 
 DAD-M is a structured framework for AI-assisted project work. It separates analysis, design, implementation, and validation into four explicit phases: Discover, Apply, Deploy, and Monitor.
 
+The repository is published as a public method repository for people who want a more controlled alternative to ad-hoc prompting.
+
 ## What DAD-M is
 
-DAD-M is a reusable operating model for projects that need more than ad-hoc prompting. It is designed around milestones, documented artifacts, and repeatable outputs instead of one-off chats.
+DAD-M is a reusable operating model for projects that need more than ad-hoc prompting. It is designed around milestones, documented outputs, and repeatable delivery instead of one-off chats.
 
 ## Why DAD-M exists
 
@@ -36,6 +38,8 @@ DAD-M is useful for people who need structure around AI-assisted delivery, espec
 - documentation-heavy work
 - automation workflows
 - project planning with explicit milestones
+
+It is most useful when work needs reviewable outputs, explicit scope boundaries, and milestone-by-milestone control.
 
 ## How to start
 
@@ -128,14 +132,12 @@ Dependency changes, network use, and work outside the declared scope stay explic
 
 ## Project status
 
-This repository documents DAD-M as a public framework artifact. The current focus is a clear method overview, practical starting guidance, and conservative governance notes.
+This repository documents DAD-M as a public framework repository. The current focus is a clear method overview, practical starting guidance, and conservative governance notes.
 
-A DAD-M Education variant is also being documented as a work-in-progress extension for validated learning and knowledge-building workflows. A public summary for that variant is available in [docs/variants/education.md](docs/variants/education.md).
+A DAD-M Education variant is also being documented as an early public extension for validated learning and knowledge-building workflows. A public summary for that variant is available in [docs/variants/education.md](docs/variants/education.md).
 
-Known current usage context: the framework is used regularly in project context by project managers in a Deutsche Telekom Technik environment. This repository does not claim formal approval, company-wide adoption, or enterprise validation.
+This repository does not claim formal approval, organization-wide adoption, or enterprise validation.
 
 ## Author / context
 
-Author: Adrian Christian Groszewski
-
-This repository is curated as a public GitHub artifact for explaining and applying the DAD-M method.
+I curated this Repository in a way that hopefully helps with structuring your projects and uses the key advantages of agentic systems while keeping responsibility firmly in the hands of human operators.
