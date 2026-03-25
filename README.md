@@ -94,6 +94,9 @@ It is most useful when work needs reviewable outputs, explicit scope boundaries,
 | File | Purpose |
 | --- | --- |
 | [framework/templates/human-decision-record.md](framework/templates/human-decision-record.md) | Template for mandatory human decision artifacts |
+| [framework/templates/discover-output.md](framework/templates/discover-output.md) | Template for Discover phase output records |
+| [framework/templates/apply-output.md](framework/templates/apply-output.md) | Template for Apply phase output records |
+| [framework/templates/rework-plan.md](framework/templates/rework-plan.md) | Template for intra-phase rework plans (MR1–MRn) |
 
 ### Documentation
 

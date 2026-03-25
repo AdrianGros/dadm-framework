@@ -150,6 +150,9 @@ Deploy phase adds: Implementation Summary, Files Changed, Proofs, Acceptance Che
 6. Working mode
 7. Discover for M1
 
+Operational prompt templates for each step (two-phase setup, prompt chain through M1 Apply)
+are in `framework/core/bootstrap.md` under "Operational prompt templates".
+
 ---
 
 ## Key file index
@@ -168,6 +171,9 @@ Deploy phase adds: Implementation Summary, Files Changed, Proofs, Acceptance Che
 | Rework rules | `governance/rework-and-escalation.md` |
 | Policy files | `governance/policies/` |
 | Human decision template | `framework/templates/human-decision-record.md` |
+| Discover output template | `framework/templates/discover-output.md` |
+| Apply output template | `framework/templates/apply-output.md` |
+| Rework plan template | `framework/templates/rework-plan.md` |
 | Glossary | `docs/glossary.md` |
 | Software integration guide | `docs/software-reference.md` |
 | Methodology overview | `docs/methodology.md` |
