@@ -12,6 +12,7 @@ Capture the minimum context before any design work starts:
 - technologies or environment
 - timeframe if relevant
 - non-goals
+- specific ideas 
 
 ## 2. Set safety boundaries
 
