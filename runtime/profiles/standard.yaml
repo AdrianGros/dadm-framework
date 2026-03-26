@@ -1,0 +1,5 @@
+profile: standard
+inherits: [development]
+intent: Balanced default mode for normal milestone work.
+auto_load: []
+routes_from_registry: runtime/file-registry.yaml

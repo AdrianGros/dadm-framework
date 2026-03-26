@@ -2,6 +2,9 @@
 
 The source material describes a one-time setup phase before milestone work starts. Use it to initialize the project context and define the operating rules.
 
+For runtime-first AI usage, load `runtime/cards/bootstrap-card.md` first and escalate
+to this full document only when the card is insufficient.
+
 ## Setup sequence
 
 1. Create the project brief.

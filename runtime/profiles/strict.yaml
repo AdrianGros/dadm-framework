@@ -1,0 +1,8 @@
+profile: strict
+inherits: [standard]
+intent: High-assurance execution with stronger governance defaults.
+auto_load:
+  - runtime/cards/human-decision-card.md
+  - governance/governance-matrix.md
+  - governance/rework-and-escalation.md
+routes_from_registry: runtime/file-registry.yaml

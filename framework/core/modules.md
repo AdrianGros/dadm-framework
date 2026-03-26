@@ -92,6 +92,12 @@ need faster iteration should declare `development` or `fast`. Leaving the choice
 (no profile declared) defaults to `standard` as a conservative middle ground rather than
 the least restrictive option.
 
+The same profile names may also be used by a document-loading registry for AI runtime
+context. In this repository, that runtime layer is defined in `runtime/file-registry.yaml`
+and starts from `runtime/AI_BIOS.md`. Module profiles and document-load profiles are
+parallel concepts: one selects checks, the other selects which framework documents are
+loaded by default.
+
 ## Writing a new module
 
 1. Define the module name and the phases it runs in.

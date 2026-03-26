@@ -1,0 +1,6 @@
+profile: development
+inherits: [fast]
+intent: Active project work with lighter governance detail.
+auto_load:
+  - runtime/cards/governance-min.md
+routes_from_registry: runtime/file-registry.yaml

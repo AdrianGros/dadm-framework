@@ -1,8 +1,9 @@
 # AI_CONTEXT — DAD-M Framework
 
-This file is the primary entry point for AI systems reading this repository.
-It provides a compact, structured summary of what DAD-M is, how it is organized,
-and what the authoritative sources for each concept are.
+This file is the compact repository summary for humans and AI systems that want one
+general overview. For runtime-first AI loading, start with `runtime/AI_BIOS.md`.
+That file chooses the smallest useful document set for the current task, phase,
+and strictness profile.
 
 For human-readable introduction, see `docs/overview.md`.
 For methodological positioning, see `docs/methodology.md`.
@@ -139,6 +140,22 @@ Every phase output must contain:
 Deploy phase adds: Implementation Summary, Files Changed, Proofs, Acceptance Checklist.
 
 ---
+
+## Runtime loading (authoritative: `runtime/AI_BIOS.md`, `runtime/file-registry.yaml`)
+
+Use runtime cards as the default loading surface:
+
+- `runtime/cards/core-rules.md`
+- `runtime/cards/phase-map.md`
+- `runtime/cards/deliverables-min.md`
+- `runtime/cards/governance-min.md`
+
+Load route cards for `bootstrap`, `discover`, `apply`, `deploy`, `monitor`, or
+`human_decision`. Full framework and governance documents are on-demand references,
+not the default runtime load.
+
+Never auto-load: `docs/examples/*`, `docs/glossary.md`, `docs/methodology.md`,
+`docs/software-reference.md`.
 
 ## Bootstrap sequence (authoritative: `framework/core/bootstrap.md`)
 

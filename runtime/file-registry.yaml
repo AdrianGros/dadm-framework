@@ -1,0 +1,127 @@
+version: 1
+default_profile: standard
+
+profiles:
+  fast:
+    description: Minimum runtime context for quick, low-overhead iteration.
+    auto_load:
+      - runtime/cards/core-rules.md
+      - runtime/cards/phase-map.md
+      - runtime/cards/deliverables-min.md
+    allow_on_demand:
+      - framework/core/bootstrap.md
+      - framework/core/milestones.md
+      - governance/guardrails.md
+      - governance/governance-matrix.md
+
+  development:
+    description: Day-to-day project work with lighter governance detail.
+    auto_load:
+      - runtime/cards/core-rules.md
+      - runtime/cards/phase-map.md
+      - runtime/cards/deliverables-min.md
+      - runtime/cards/governance-min.md
+    allow_on_demand:
+      - framework/core/bootstrap.md
+      - framework/core/milestones.md
+      - framework/core/deliverables.md
+      - governance/guardrails.md
+      - governance/governance-matrix.md
+      - governance/rework-and-escalation.md
+
+  standard:
+    description: Default balanced runtime profile for normal milestone work.
+    auto_load:
+      - runtime/cards/core-rules.md
+      - runtime/cards/phase-map.md
+      - runtime/cards/deliverables-min.md
+      - runtime/cards/governance-min.md
+    allow_on_demand:
+      - framework/core/bootstrap.md
+      - framework/core/phases.md
+      - framework/core/milestones.md
+      - framework/core/deliverables.md
+      - governance/guardrails.md
+      - governance/governance-matrix.md
+      - governance/rework-and-escalation.md
+
+  strict:
+    description: High-assurance mode with stronger governance context loaded by default.
+    auto_load:
+      - runtime/cards/core-rules.md
+      - runtime/cards/phase-map.md
+      - runtime/cards/deliverables-min.md
+      - runtime/cards/governance-min.md
+      - runtime/cards/human-decision-card.md
+      - governance/governance-matrix.md
+      - governance/rework-and-escalation.md
+    allow_on_demand:
+      - framework/core/bootstrap.md
+      - framework/core/phases.md
+      - framework/core/milestones.md
+      - framework/core/deliverables.md
+      - governance/guardrails.md
+
+routes:
+  bootstrap:
+    load:
+      - runtime/cards/bootstrap-card.md
+
+  discover:
+    load:
+      - runtime/cards/discover-card.md
+      - runtime/cards/deliverables-min.md
+
+  apply:
+    load:
+      - runtime/cards/apply-card.md
+      - runtime/cards/deliverables-min.md
+
+  deploy:
+    load:
+      - runtime/cards/deploy-card.md
+      - runtime/cards/deliverables-min.md
+
+  monitor:
+    load:
+      - runtime/cards/monitor-card.md
+      - runtime/cards/deliverables-min.md
+
+  human_decision:
+    load:
+      - runtime/cards/human-decision-card.md
+      - governance/governance-matrix.md
+
+document_classes:
+  runtime_canonical:
+    - runtime/cards/core-rules.md
+    - runtime/cards/phase-map.md
+    - runtime/cards/deliverables-min.md
+    - runtime/cards/governance-min.md
+    - runtime/cards/bootstrap-card.md
+    - runtime/cards/discover-card.md
+    - runtime/cards/apply-card.md
+    - runtime/cards/deploy-card.md
+    - runtime/cards/monitor-card.md
+    - runtime/cards/human-decision-card.md
+
+  reference_canonical:
+    - framework/core/bootstrap.md
+    - framework/core/phases.md
+    - framework/core/milestones.md
+    - framework/core/deliverables.md
+    - governance/guardrails.md
+    - governance/governance-matrix.md
+    - governance/rework-and-escalation.md
+
+  human_docs:
+    - README.md
+    - AI_CONTEXT.md
+    - docs/overview.md
+    - docs/getting-started.md
+
+never_auto_load:
+  - docs/examples/*
+  - docs/glossary.md
+  - docs/methodology.md
+  - docs/software-reference.md
