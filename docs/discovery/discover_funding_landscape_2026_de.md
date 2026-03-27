@@ -119,6 +119,10 @@ Fit: medium now, high after stronger traction and KPI proof.
   https://www.foerderdatenbank.de/FDB/DE/Service/Beratung/beratung.html
 - Foerderberatung Forschung und Innovation contact page:
   https://www.foerderdatenbank.de/FDB/Content/DE/Kontakt/F/foerderberatung-forschung-und-innovation.html
+- ZIM program portal:
+  https://www.zim.de/
+- ZIM FAQ FuE-Projekte:
+  https://www.zim.de/ZIM/Redaktion/DE/FAQ/FuE-Projekte/fue-projekte.html
 - KfW StartGeld overview:
   https://www.kfw.de/%C3%9Cber-die-KfW/Newsroom/Aktuelles/StartGeld.html
 - EXIST Gruenderstipendium one-pager (BMWE):
