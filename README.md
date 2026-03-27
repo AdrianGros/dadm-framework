@@ -49,7 +49,8 @@ It is most useful when work needs reviewable outputs, explicit scope boundaries,
 4. Run the first cycle and record outputs using [framework/core/deliverables.md](framework/core/deliverables.md).
 5. Keep the work inside the rules in [governance/guardrails.md](governance/guardrails.md).
 
-**For AI systems:** Load [AI_CONTEXT.md](AI_CONTEXT.md) for a compact structured summary.
+**For AI systems:** Start with [runtime/AI_BIOS.md](runtime/AI_BIOS.md) and load only the runtime cards required by the current task and profile.
+**General summary:** [AI_CONTEXT.md](AI_CONTEXT.md) remains available as a compact repository overview.
 **For software implementers:** See [docs/software-reference.md](docs/software-reference.md) for interface contracts and schemas.
 
 ## Repository structure
@@ -59,6 +60,7 @@ It is most useful when work needs reviewable outputs, explicit scope boundaries,
 - `framework/templates/` — reusable framework templates
 - `governance/` — operating rules, evidence boundaries, and policies
 - `governance/policies/` — machine-readable (YAML) forms of governance rules
+- `runtime/` — AI runtime loader, profiles, and short execution cards
 
 ### Core method
 
@@ -102,7 +104,16 @@ It is most useful when work needs reviewable outputs, explicit scope boundaries,
 
 | File | Purpose |
 | --- | --- |
-| [AI_CONTEXT.md](AI_CONTEXT.md) | Compact structured summary for AI systems |
+| [docs/presentation/README.md](docs/presentation/README.md) | Curated human-readable package for demos, partner talks, and funding outreach |
+| [docs/presentation/architecture-bios.md](docs/presentation/architecture-bios.md) | DAD-M architecture narrative and BIOS model for decision makers |
+| [docs/discovery/discover_funding_landscape_2026_de.md](docs/discovery/discover_funding_landscape_2026_de.md) | Discover artifact: funding options and go-to-market contact paths (DE/EU) |
+| [docs/presentation/team-operating-model.md](docs/presentation/team-operating-model.md) | Operating model for a 3-person founder team |
+| [docs/presentation/pitch-mail-template.md](docs/presentation/pitch-mail-template.md) | Practical outreach mail template for programs and partners |
+| [docs/presentation/pitch-deck-outline.md](docs/presentation/pitch-deck-outline.md) | Presentation structure focused on clarity and evaluability |
+| [docs/presentation/repo-curation-guide.md](docs/presentation/repo-curation-guide.md) | Rules to remove duplication and avoid AI-sounding language |
+| [runtime/AI_BIOS.md](runtime/AI_BIOS.md) | Runtime loader entry point for AI systems |
+| [runtime/file-registry.yaml](runtime/file-registry.yaml) | Runtime document registry with profiles, routes, and opt-in references |
+| [AI_CONTEXT.md](AI_CONTEXT.md) | Compact structured summary for humans and general AI overview |
 | [docs/overview.md](docs/overview.md) | Concise method overview including design assumption |
 | [docs/methodology.md](docs/methodology.md) | Methodological positioning, design assumption, comparison table |
 | [docs/getting-started.md](docs/getting-started.md) | Step-by-step first use (7 steps including scope + approval) |
@@ -116,13 +127,14 @@ It is most useful when work needs reviewable outputs, explicit scope boundaries,
 
 ## Example usage / workflow
 
-1. Define the project brief, safety boundaries, and scope declaration.
-2. Break the work into milestones with clear scope, dependencies, and priority.
-3. Obtain approval for the milestone plan before starting M1.
-4. Run Discover to collect the facts for milestone M1.
-5. Run Apply to design the solution within those facts.
-6. Run Deploy to implement only the approved design and capture proofs.
-7. Run Monitor to validate the result and prepare the next milestone.
+1. Choose a runtime load profile and load only the relevant runtime cards.
+2. Define the project brief, safety boundaries, and scope declaration.
+3. Break the work into milestones with clear scope, dependencies, and priority.
+4. Obtain approval for the milestone plan before starting M1.
+5. Run Discover to collect the facts for milestone M1.
+6. Run Apply to design the solution within those facts.
+7. Run Deploy to implement only the approved design and capture proofs.
+8. Run Monitor to validate the result and prepare the next milestone.
 
 For a concrete public example, see [docs/examples/rbac-case-example.md](docs/examples/rbac-case-example.md).
 
