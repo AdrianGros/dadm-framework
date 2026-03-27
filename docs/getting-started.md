@@ -2,6 +2,9 @@
 
 This is the shortest path to using DAD-M on a new project.
 
+If an AI system is loading runtime context, start with `runtime/AI_BIOS.md` and
+follow the registry/profile flow instead of loading multiple onboarding documents.
+
 ## 1. Create the project brief
 
 Capture the minimum context before any design work starts:
@@ -73,6 +76,6 @@ The Monitor output is not the end of the method. It becomes the starting point f
 
 ## Practical starting point
 
-Use [framework/core/bootstrap.md](../framework/core/bootstrap.md) as the setup template and [framework/core/deliverables.md](../framework/core/deliverables.md) as the reporting format.
+Use [runtime/cards/bootstrap-card.md](../runtime/cards/bootstrap-card.md) for the shortest runtime setup path, [framework/core/bootstrap.md](../framework/core/bootstrap.md) for the full setup template, and [framework/core/deliverables.md](../framework/core/deliverables.md) as the reporting format.
 
 For a public technical milestone example, review [docs/examples/rbac-case-example.md](examples/rbac-case-example.md).

@@ -1,0 +1,8 @@
+profile: fast
+inherits: []
+intent: Quick iteration with minimum runtime context.
+auto_load:
+  - runtime/cards/core-rules.md
+  - runtime/cards/phase-map.md
+  - runtime/cards/deliverables-min.md
+routes_from_registry: runtime/file-registry.yaml

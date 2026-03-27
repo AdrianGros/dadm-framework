@@ -1,5 +1,8 @@
 # Overview
 
+For runtime-first AI execution, start with `runtime/AI_BIOS.md` instead of loading
+this document and other overview files together.
+
 DAD-M is a structured framework for AI-assisted project work built around four phases:
 
 1. Discover
@@ -44,7 +47,8 @@ and produces the first artifacts. The setup sequence is:
 6. Working mode — single session or multi-session
 
 The full setup sequence with field definitions and the approval artifact format is in
-[framework/core/bootstrap.md](../framework/core/bootstrap.md).
+[framework/core/bootstrap.md](../framework/core/bootstrap.md). For runtime use, prefer
+the shorter [runtime/cards/bootstrap-card.md](../runtime/cards/bootstrap-card.md).
 
 ## What DAD-M is not
 
