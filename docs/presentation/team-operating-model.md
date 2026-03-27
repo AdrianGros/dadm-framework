@@ -1,38 +1,38 @@
-# Team Operating Model (3 People)
+# Team-Betriebsmodell (3 Personen)
 
-## Principle
+## Prinzip
 
-Small team means strict focus: one owner per outcome, no shared ambiguity.
+Kleines Team bedeutet maximale Klarheit: ein Owner pro Ergebnis, keine unklaren Zustaendigkeiten.
 
-## Roles and ownership
+## Rollen und Ownership
 
-| Area | Primary owner | Backup | Output |
+| Bereich | Primaer | Backup | Ergebnis |
 | --- | --- | --- | --- |
-| Product architecture and technical narrative | Adrian | Marrt | architecture brief, roadmap, demo script |
-| Commercial logic and application packaging | Mischelle | Adrian | budget, business plan, partner communication |
-| Security and governance evidence | Marrt | Adrian | risk matrix, controls, compliance mapping |
+| Produktarchitektur und Techniknarrativ | Adrian | Marrt | Architekturblatt, Roadmap, Demo-Skript |
+| Kaufmaennische Logik und Antragsaufbereitung | Mischelle | Adrian | Budget, Business Case, Partnerkommunikation |
+| Security- und Governance-Evidenz | Marrt | Adrian | Risikomatrix, Kontrollnachweise, Compliance-Mapping |
 
-## Weekly cadence
+## Wochenrhythmus
 
-1. Monday (45 min): funding and delivery priorities, blocker check.
-2. Mid-week (30 min): application progress and evidence readiness.
-3. Friday (45 min): review artifacts against submission checklist.
+1. Montag (45 Min): Prioritaeten, Foerderpfad, Blocker.
+2. Mittwoch (30 Min): Stand der Antragsbausteine und Evidenzluecken.
+3. Freitag (45 Min): Review gegen Einreichungs-Checkliste.
 
-## RACI for funding workflow
+## RACI fuer Foerderworkflow
 
-| Task | Adrian | Mischelle | Marrt |
+| Aufgabe | Adrian | Mischelle | Marrt |
 | --- | --- | --- | --- |
-| Program selection | C | A/R | C |
-| Technical work packages | A/R | C | C |
-| Budget and finance section | C | A/R | I |
-| Security/compliance chapter | C | I | A/R |
-| Final submission package | A | A/R | R |
-| External pitch call | A/R | A/R | C |
+| Programmauswahl | C | A/R | C |
+| Technische Arbeitspakete | A/R | C | C |
+| Budget- und Finanzteil | C | A/R | I |
+| Security-/Compliance-Kapitel | C | I | A/R |
+| Finale Einreichung | A | A/R | R |
+| Externer Pitch-Termin | A/R | A/R | C |
 
-Legend: R = Responsible, A = Accountable, C = Consulted, I = Informed
+Legende: R = Responsible, A = Accountable, C = Consulted, I = Informed
 
-## Decision rules
+## Entscheidungsregeln
 
-- No submission without one owner per chapter.
-- No claim in pitch material without evidence artifact.
-- No roadmap promise without assigned implementation owner.
+- Kein Versand ohne klaren Owner je Kapitel.
+- Keine Behauptung ohne belegbares Artefakt.
+- Kein Roadmap-Versprechen ohne Umsetzungsverantwortung.

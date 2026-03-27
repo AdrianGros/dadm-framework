@@ -1,38 +1,38 @@
-# Pitch Deck Outline (10 Slides)
+# Pitch-Deck-Struktur (10 Folien)
 
-## Goal
+## Ziel
 
-Explain clearly why DAD-M matters, what already works, and why funding accelerates measurable outcomes.
+Klar zeigen, warum DAD-M relevant ist, was bereits funktioniert und wofuer die Finanzierung konkret eingesetzt wird.
 
-## Slide structure
+## Folienstruktur
 
 1. Problem
-   - Why AI-assisted delivery fails without governance
-   - Cost of unclear ownership and non-reproducible outputs
-2. Solution
-   - DAD-M as Discover/Apply/Deploy/Monitor operating system
-   - What is software today vs. what is roadmap
-3. Product demo path
-   - one real workflow from input to monitored outcome
-4. Architecture and BIOS
-   - Business, Integrity, Operations, Security mapping
-5. Traction and proof
-   - current users, pilots, usage signals, qualitative proof
-6. Market and customer profile
-   - who pays, why now, why this approach
-7. Competition and differentiation
-   - what alternatives do, where DAD-M is structurally stronger
-8. Funding use plan
-   - concrete work packages, budget blocks, milestones
-9. Team and execution readiness
-   - role ownership and delivery cadence
-10. Ask and next step
-   - requested support, timeline, and meeting proposal
+   - Warum KI-gestuetzte Umsetzung ohne Governance scheitert
+   - Kosten durch unklare Ownership und fehlende Reproduzierbarkeit
+2. Loesung
+   - DAD-M als Discover/Apply/Deploy/Monitor-Betriebssystem
+   - Was heute schon produktiv ist, was Roadmap ist
+3. Produktdemo-Ablauf
+   - ein realer Workflow von Eingabe bis Monitor-Ergebnis
+4. Architektur und BIOS
+   - Business, Integrity, Operations, Security in der Praxis
+5. Traktion und Nachweise
+   - Nutzer, Pilotprojekte, Nutzungsdaten, qualitative Evidenz
+6. Markt und Zielkunden
+   - wer zahlt, warum jetzt, warum dieser Ansatz
+7. Wettbewerb und Differenzierung
+   - Alternativen und strukturelle Vorteile von DAD-M
+8. Mittelverwendung
+   - konkrete Arbeitspakete, Budgetbloecke, Meilensteine
+9. Team und Umsetzungsfaehigkeit
+   - Rollen, Ownership, Umsetzungsrhythmus
+10. Anfrage und naechster Schritt
+   - gewuenschte Unterstuetzung, Zeitplan, Terminvorschlag
 
-## Deck quality checklist
+## Deck-Qualitaetscheck
 
-- each slide has one core message
-- no jargon sentence longer than 20 words
-- every performance claim has a source or evidence note
-- no "future tense" on current capability slides
-- final slide includes explicit call to action
+- pro Folie genau eine Kernbotschaft
+- keine leeren Buzzwords
+- jede Leistungsbehauptung mit Quelle oder Artefakt
+- kein Zukunftstext in Folien zum Ist-Stand
+- letzte Folie mit klarer Handlungsaufforderung

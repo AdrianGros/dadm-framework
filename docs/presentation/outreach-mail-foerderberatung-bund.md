@@ -1,24 +1,24 @@
-# Outreach Mail (tailored): Foerderberatung "Forschung und Innovation" des Bundes
+# Outreach-Mail (zugeschnitten): Foerderberatung "Forschung und Innovation" des Bundes
 
-## Target contact
+## Zielkontakt
 
 - Institution: Foerderberatung "Forschung und Innovation" des Bundes
-- Email: beratung@foerderinfo.bund.de
+- E-Mail: beratung@foerderinfo.bund.de
 - Hotline: 0800 26 23 008
 - Lotsendienst Unternehmen: 0800 26 23 009
 
-Source:
+Quelle:
 https://www.foerderdatenbank.de/FDB/DE/Service/Beratung/beratung.html
 
-## Subject
+## Betreff
 
 Anfrage Foerderfit-Check: DAD-M Governance-Plattform (3er-Team, funktionsfaehige Software)
 
-## Mail text
+## Mailtext
 
 Sehr geehrtes Team der Foerderberatung "Forschung und Innovation" des Bundes,
 
-wir sind ein 3-koepfiges Team und entwickeln mit DAD-M eine funktionsfaehige Governance-Plattform fuer AI-assistierte Projektarbeit. Unser Schwerpunkt liegt auf nachvollziehbarer Umsetzung mit klaren Meilensteinen, Entscheidungsprotokollen und Security-Guardrails.
+wir sind ein 3-koepfiges Team und entwickeln mit DAD-M eine funktionsfaehige Governance-Plattform fuer KI-assistierte Projektarbeit. Unser Schwerpunkt liegt auf nachvollziehbarer Umsetzung mit klaren Meilensteinen, Entscheidungsprotokollen und Security-Guardrails.
 
 Team:
 - Adrian Groszewski (Fachinformatiker, Projektmanager)

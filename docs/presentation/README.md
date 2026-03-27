@@ -1,10 +1,8 @@
-# Presentation Pack (Human-Readable)
+# Praesentationspaket (deutsch)
 
-This folder is a curated entry point for people who are not yet inside the framework details.
+Dieser Ordner ist der kuratierte Einstieg fuer Leserinnen und Leser, die DAD-M schnell und klar verstehen sollen.
 
-Use this pack when you need to explain DAD-M as a working software and governance platform in clear business language.
-
-## Recommended reading order
+## Empfohlene Reihenfolge
 
 1. [architecture-bios.md](architecture-bios.md)
 2. [one-pager-dadm-governance-platform.md](one-pager-dadm-governance-platform.md)
@@ -15,13 +13,13 @@ Use this pack when you need to explain DAD-M as a working software and governanc
 7. [pr-description.md](pr-description.md)
 8. [repo-curation-guide.md](repo-curation-guide.md)
 
-## What this pack optimizes for
+## Ziel des Pakets
 
-- minimal repetition across documents
-- concrete statements instead of generic claims
-- clear separation between current capability and future roadmap
-- reviewer-friendly language for partners, investors, and public funding bodies
+- klare Sprache statt Buzzwords
+- keine doppelten Erklaerungen
+- trennscharf zwischen heutigem Stand und Roadmap
+- direkte Nutzbarkeit fuer Partner, Foerderstellen und Gremien
 
-## Related discovery artifact
+## Zugehoeriges Discover-Artefakt
 
 - [../discovery/discover_funding_landscape_2026_de.md](../discovery/discover_funding_landscape_2026_de.md)

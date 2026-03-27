@@ -1,47 +1,47 @@
-# Repo Curation Guide (No Repetition, No AI-Speak)
+# Repo-Kurationsleitfaden (keine Wiederholungen, kein KI-Sprech)
 
-## Objective
+## Ziel
 
-Make the repository easy to trust for human reviewers in under 10 minutes.
+Das Repository soll fuer menschliche Pruefende in unter 10 Minuten vertrauenswuerdig und verstaendlich sein.
 
-## Curation rules
+## Kurationsregeln
 
-1. One concept, one canonical file.
-2. Cross-link instead of re-explaining.
-3. Replace vague words ("robust", "powerful", "innovative") with evidence.
-4. Keep claims falsifiable and time-bounded.
-5. Distinguish clearly:
-   - current capability
-   - validated next step
-   - open research question
+1. Ein Konzept, eine kanonische Datei.
+2. Verlinken statt mehrfach erklaeren.
+3. Vage Begriffe durch Evidenz ersetzen.
+4. Aussagen pruefbar und zeitlich einordnen.
+5. Strikt unterscheiden:
+   - aktueller Leistungsstand
+   - validierter naechster Schritt
+   - offene Fragestellung
 
-## Writing anti-patterns to remove
+## Schreibmuster, die wir vermeiden
 
-- "state-of-the-art" without comparison
-- "end-to-end" without boundary definition
-- "AI-native" without operational meaning
-- repeated summaries across README, overview, and docs
+- "State of the Art" ohne Vergleich
+- "End-to-End" ohne Systemgrenze
+- "AI-native" ohne operativen Gehalt
+- doppelte Zusammenfassungen in README, Overview und Zusatzseiten
 
-## Style standard
+## Sprachstandard
 
-- short paragraphs (max 4 lines)
-- active voice and concrete verbs
-- numbers where possible
-- one table per topic, not per paragraph
-- one glossary term per concept
+- kurze Absaetze (maximal 4 Zeilen)
+- aktive Verben
+- konkrete Zahlen, wo moeglich
+- pro Thema eine Tabelle, nicht pro Absatz
+- ein Glossarbegriff pro Konzept
 
-## Structural curation checklist
+## Struktur-Checkliste
 
-- README links to one overview, not many competing intros.
-- Each folder has one short `README.md` with purpose and entry points.
-- Decision logs stay in `docs/decisions/`.
-- Presentation assets stay in `docs/presentation/`.
-- Discover artifacts stay in `docs/discovery/`.
+- README verweist auf genau einen Haupteinstieg.
+- Jeder Ordner hat ein kurzes `README.md` mit Zweck und Einstieg.
+- Entscheidungsprotokolle liegen in `docs/decisions/`.
+- Praesentationsunterlagen liegen in `docs/presentation/`.
+- Discover-Artefakte liegen in `docs/discovery/`.
 
-## Release checklist for external sharing
+## Release-Check fuer externe Nutzung
 
-1. Remove duplicate topic pages or convert to links.
-2. Verify all external links and contact addresses.
-3. Verify no confidential data in examples.
-4. Add "what we can prove today" section to README or deck.
-5. Run one non-team readability review before publishing.
+1. Doppelte Inhaltsseiten entfernen oder in Verweise umwandeln.
+2. Alle externen Links und Kontakte pruefen.
+3. Keine vertraulichen Daten in Beispielen veroeffentlichen.
+4. Abschnitt "Was wir heute nachweisen koennen" in README oder Deck pflegen.
+5. Eine Lesbarkeitspruefung durch eine fachfremde Person einholen.

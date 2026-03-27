@@ -1,39 +1,39 @@
-# PR Description (ready to paste)
+# PR-Beschreibung (fertig zum Einfuegen)
 
-## Title
+## Titel
 
-Curate presentation package: architecture narrative, one-pager, and funding outreach assets
+Praesentationspaket kuratiert: Architektur-Narrativ, One-Pager und Foerder-Outreach
 
-## Why
+## Ziel
 
-The repository needed a clear, human-readable entry path for external reviewers (funding advisors, partners, and non-technical stakeholders). Existing method content is strong, but presentation assets were spread out and not yet packaged as one coherent narrative.
+Das Repository brauchte einen klaren, deutschsprachigen Einstieg fuer externe Pruefende (Foerderstellen, Partner, nicht-technische Stakeholder). Die Methodenbasis war bereits stark, aber Praesentationsinhalte waren noch nicht als zusammenhaengendes Paket aufbereitet.
 
-## What changed
+## Aenderungen
 
-1. Added a focused presentation package under `docs/presentation/`:
-   - architecture + BIOS narrative
-   - team operating model for a 3-person founding team
-   - pitch deck outline
-   - practical pitch mail template
-   - repo curation guide (anti-duplication, anti-buzzword)
-2. Added a Discover artifact for funding-fit screening:
+1. Klares Praesentationspaket unter `docs/presentation/` ergaenzt:
+   - Architektur- und BIOS-Narrativ
+   - Team-Betriebsmodell fuer ein 3er-Team
+   - Pitch-Deck-Struktur
+   - praktische Pitch-Mail-Vorlage
+   - Kurationsleitfaden ohne Wiederholungen und Buzzwords
+2. Discover-Artefakt zur Foerderfaehigkeitsanalyse eingebunden:
    - `docs/discovery/discover_funding_landscape_2026_de.md`
-   - includes staged program strategy (DE/EU), risks, and next actions
-3. Updated `README.md` documentation index to surface these assets as first-class entry points.
+   - mit gestuftem DE/EU-Pfad, Risiken und naechsten Schritten
+3. `README.md`-Index aktualisiert, damit diese Inhalte direkt auffindbar sind.
 
-## Scope and non-goals
+## Umfang und Abgrenzung
 
-- In scope: documentation curation, funding discovery packaging, external communication assets.
-- Out of scope: method logic changes, policy changes, runtime behavior changes, software implementation changes.
+- Im Umfang: Dokumentationskurierung, Foerder-Discover-Aufbereitung, externe Kommunikationsbausteine.
+- Nicht im Umfang: Methodenlogik, Policies, Runtime-Verhalten, Softwareimplementierung.
 
-## Reviewer checklist
+## Review-Checkliste
 
-1. Is the new presentation reading path clear in under 10 minutes?
-2. Are current capabilities clearly separated from roadmap assumptions?
-3. Are funding recommendations realistic for a 3-person team?
-4. Are there any duplicate statements that should be replaced by cross-links?
+1. Ist der neue Praesentationspfad in unter 10 Minuten verstaendlich?
+2. Sind Ist-Stand und Roadmap klar getrennt?
+3. Sind die Foerderempfehlungen fuer ein 3er-Team realistisch?
+4. Gibt es noch doppelte Aussagen, die durch Verweise ersetzt werden sollten?
 
-## Risk notes
+## Risiko-Hinweise
 
-- Program fit can change over time; source links are included and should be rechecked before submission windows.
-- Some program pathways depend on legal entity and accounting status, which are intentionally marked as open questions.
+- Programmpassung kann sich aendern; Quellen vor Einreichungsfenstern erneut pruefen.
+- Einzelne Foerderpfade haengen von Rechtsform und Buchhaltungsstatus ab; diese Punkte sind bewusst als offen markiert.

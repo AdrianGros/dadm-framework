@@ -1,46 +1,46 @@
-# DAD-M Architecture and BIOS Narrative
+# DAD-M Architektur und BIOS-Narrativ
 
-## One sentence
+## Ein Satz
 
-DAD-M is a governance-first delivery platform that turns AI-assisted work into auditable, milestone-based execution.
+DAD-M ist eine Governance-first Plattform, die KI-gestuetzte Projektarbeit in pruefbare, meilensteinbasierte Umsetzung ueberfuehrt.
 
-## Architecture in plain language
+## Architektur in Klartext
 
-The platform has five layers:
+Die Plattform hat fuenf Ebenen:
 
-1. Method layer: Discover, Apply, Deploy, Monitor as explicit state transitions.
-2. Governance layer: rules, approvals, and blocking checkpoints.
-3. Runtime layer: context loading, profile routing, and execution cards.
-4. Artifact layer: milestone outputs, decision records, and evidence traces.
-5. Delivery layer: software implementation, operations, and user-facing workflows.
+1. Methodenebene: Discover, Apply, Deploy, Monitor als klare Zustandswechsel.
+2. Governance-Ebene: Regeln, Freigaben und blockierende Kontrollpunkte.
+3. Runtime-Ebene: Kontextladung, Profile und Ausfuehrungskarten.
+4. Artefakt-Ebene: Meilenstein-Ergebnisse, Entscheidungen und Evidenz.
+5. Delivery-Ebene: Softwarebetrieb, Teamprozesse und Nutzerablaeufe.
 
-## BIOS model for decision makers
+## BIOS-Modell fuer Entscheider
 
-For presentations we use BIOS as a compact framing model:
+Fuer Praesentationen verwenden wir BIOS als kompaktes Erklaerungsmodell:
 
-- Business: measurable value for teams, customers, and partners.
-- Integrity: traceability, reproducibility, and decision accountability.
-- Operations: repeatable execution with clear handoffs and monitoring.
-- Security: risk boundaries, approval gates, and controlled change behavior.
+- Business: messbarer Nutzen fuer Teams, Kunden und Partner.
+- Integrity: Nachvollziehbarkeit, Reproduzierbarkeit, Verantwortlichkeit.
+- Operations: wiederholbare Umsetzung mit klaren Uebergaben.
+- Security: Risikogrenzen, Freigabelogik, kontrolliertes Aenderungsverhalten.
 
-## How BIOS maps to DAD-M
+## BIOS-Mapping auf DAD-M
 
-| BIOS area | DAD-M mechanisms | Evidence examples |
+| BIOS-Bereich | DAD-M-Mechanismen | Evidenzbeispiele |
 | --- | --- | --- |
-| Business | milestone planning, scope control, acceptance criteria | approved milestone plan, delivery acceptance logs |
-| Integrity | artifact retention, decision records, immutable checkpoints | discover/apply/deploy/monitor outputs, decision artifacts |
-| Operations | bootstrap protocol, module profiles, runtime cards | bootstrap artifacts, profile selection records |
-| Security | guardrails, severity handling, escalation and rework policy | policy files, issue severity records, escalation traces |
+| Business | Meilensteinplanung, Scope-Kontrolle, Akzeptanzkriterien | freigegebene Plaene, Abnahmeprotokolle |
+| Integrity | Artefakt-Retention, Entscheidungsprotokolle, Kontrollpunkte | Discover/Apply/Deploy/Monitor-Artefakte |
+| Operations | Bootstrap-Protokoll, Module, Runtime-Profile | Bootstrap-Nachweise, Profilzuweisungen |
+| Security | Guardrails, Severity-Logik, Eskalation und Rework | Policy-Dateien, Severity-Records |
 
-## Current platform position (for external communication)
+## Aktueller Plattformstand (extern kommunizierbar)
 
-- Framework repository is public and method-complete for practical usage.
-- Governance and runtime artifacts are available and cross-linked.
-- Software implementation exists and can be demonstrated with real workflows.
-- Focus of the next phase: scale readiness, multi-tenant governance, and asset lifecycle controls.
+- Oeffentliches Framework-Repository mit nutzbarer Methodenbasis.
+- Governance- und Runtime-Artefakte sind verlinkt und einsetzbar.
+- Funktionsfaehige Softwareplattform fuer reale Demo-Workflows vorhanden.
+- Naechste Phase: Skalierung auf Multi-Tenant-Betrieb und Asset-Lifecycle-Governance.
 
-## What to avoid in a presentation
+## Was wir in Praesentationen vermeiden
 
-- Avoid claiming official certification unless documented.
-- Avoid saying "AI does everything"; emphasize controlled collaboration.
-- Avoid mixing roadmap assumptions with current production capabilities.
+- Keine unbelegten Zertifizierungs- oder Compliance-Aussagen.
+- Kein "KI macht alles", sondern kontrollierte Zusammenarbeit.
+- Keine Vermischung von heutigem Stand und Zukunfts-Roadmap.
