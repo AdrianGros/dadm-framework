@@ -7,10 +7,13 @@ Use this pack when you need to explain DAD-M as a working software and governanc
 ## Recommended reading order
 
 1. [architecture-bios.md](architecture-bios.md)
-2. [team-operating-model.md](team-operating-model.md)
-3. [pitch-deck-outline.md](pitch-deck-outline.md)
-4. [pitch-mail-template.md](pitch-mail-template.md)
-5. [repo-curation-guide.md](repo-curation-guide.md)
+2. [one-pager-dadm-governance-platform.md](one-pager-dadm-governance-platform.md)
+3. [team-operating-model.md](team-operating-model.md)
+4. [pitch-deck-outline.md](pitch-deck-outline.md)
+5. [pitch-mail-template.md](pitch-mail-template.md)
+6. [outreach-mail-foerderberatung-bund.md](outreach-mail-foerderberatung-bund.md)
+7. [pr-description.md](pr-description.md)
+8. [repo-curation-guide.md](repo-curation-guide.md)
 
 ## What this pack optimizes for
 

@@ -106,10 +106,13 @@ It is most useful when work needs reviewable outputs, explicit scope boundaries,
 | --- | --- |
 | [docs/presentation/README.md](docs/presentation/README.md) | Curated human-readable package for demos, partner talks, and funding outreach |
 | [docs/presentation/architecture-bios.md](docs/presentation/architecture-bios.md) | DAD-M architecture narrative and BIOS model for decision makers |
+| [docs/presentation/one-pager-dadm-governance-platform.md](docs/presentation/one-pager-dadm-governance-platform.md) | One-page project summary for advisors, partners, and funders |
 | [docs/discovery/discover_funding_landscape_2026_de.md](docs/discovery/discover_funding_landscape_2026_de.md) | Discover artifact: funding options and go-to-market contact paths (DE/EU) |
 | [docs/presentation/team-operating-model.md](docs/presentation/team-operating-model.md) | Operating model for a 3-person founder team |
 | [docs/presentation/pitch-mail-template.md](docs/presentation/pitch-mail-template.md) | Practical outreach mail template for programs and partners |
+| [docs/presentation/outreach-mail-foerderberatung-bund.md](docs/presentation/outreach-mail-foerderberatung-bund.md) | Ready-to-send first outreach mail for federal funding advisory |
 | [docs/presentation/pitch-deck-outline.md](docs/presentation/pitch-deck-outline.md) | Presentation structure focused on clarity and evaluability |
+| [docs/presentation/pr-description.md](docs/presentation/pr-description.md) | Clean pull request description template for this curation package |
 | [docs/presentation/repo-curation-guide.md](docs/presentation/repo-curation-guide.md) | Rules to remove duplication and avoid AI-sounding language |
 | [runtime/AI_BIOS.md](runtime/AI_BIOS.md) | Runtime loader entry point for AI systems |
 | [runtime/file-registry.yaml](runtime/file-registry.yaml) | Runtime document registry with profiles, routes, and opt-in references |
