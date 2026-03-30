@@ -105,6 +105,11 @@ document_classes:
     - runtime/cards/monitor-card.md
     - runtime/cards/human-decision-card.md
 
+  runtime_control_plane:
+    - runtime/bios.policy.md
+    - runtime/bios.routing.yaml
+    - runtime/bios.registry.json
+
   reference_canonical:
     - framework/core/bootstrap.md
     - framework/core/phases.md

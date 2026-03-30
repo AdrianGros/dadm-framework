@@ -1,0 +1,174 @@
+{
+  "version": 1,
+  "generated_at_utc": "2026-03-30T11:23:19.827474+00:00",
+  "repo_root": "/home/admin/projects/roll-drauf-vtt",
+  "summary": {
+    "policies": 1,
+    "skills": 4,
+    "agents": 3,
+    "has_project_config": true
+  },
+  "control_plane": [
+    {
+      "type": "control_plane",
+      "path": "dadm-framework/runtime/bios.policy.md",
+      "name": "bios.policy.md",
+      "sha256": "41f2202f8b5e02221555e48b7a987b0c6050cb6a6592c22e9e7d7d26947aa740",
+      "last_scanned_utc": "2026-03-30T11:23:17.323748+00:00"
+    },
+    {
+      "type": "control_plane",
+      "path": "dadm-framework/runtime/bios.routing.yaml",
+      "name": "bios.routing.yaml",
+      "sha256": "e9e0e02d0dbf2f89f94027c814fcdf78c86354c4a7d9dfdc362573d7a0246a4e",
+      "last_scanned_utc": "2026-03-30T11:23:17.324780+00:00"
+    }
+  ],
+  "project_config": {
+    "type": "config",
+    "path": ".codex/config.toml",
+    "agents": {
+      "max_threads": 4,
+      "max_depth": 1
+    },
+    "sha256": "58d000853818bc3bc1ab52e55ff53d565b54b6ada2c908b7196efe4837a20042",
+    "last_scanned_utc": "2026-03-30T11:17:48.016861+00:00"
+  },
+  "policies": [
+    {
+      "type": "policy",
+      "path": "AGENTS.md",
+      "name": "AGENTS.md",
+      "description": "Durable repository or directory-scoped Codex rules.",
+      "scope": "repo_or_directory",
+      "trigger_mode": "automatic",
+      "sha256": "9cd65059c0b6d03729dccfc77e32e4d5568fad804e4766f46e144a0b5d459d60",
+      "last_scanned_utc": "2026-03-30T11:17:48.016861+00:00"
+    }
+  ],
+  "skills": [
+    {
+      "type": "skill",
+      "path": ".agents/skills/dadm-apply/SKILL.md",
+      "name": "dadm-apply",
+      "description": "Use for solution design, architecture scoping, interface definition, and milestone planning after discovery is complete and before any implementation starts.",
+      "phase_scope": [
+        "apply"
+      ],
+      "trigger_mode": "implicit_or_explicit",
+      "explicit_prefix": "$dadm-apply",
+      "safety_flags": {
+        "repo_local": true,
+        "writes_by_default": false
+      },
+      "sha256": "dd51c54c06601346fca74e0714824ad7bf32fd3e167332a8675faa12c4d5e5f2",
+      "last_scanned_utc": "2026-03-30T11:17:48.017965+00:00"
+    },
+    {
+      "type": "skill",
+      "path": ".agents/skills/dadm-deploy/SKILL.md",
+      "name": "dadm-deploy",
+      "description": "Use for approved implementation work, targeted code changes, and verification after Apply has defined the design and boundaries.",
+      "phase_scope": [
+        "deploy"
+      ],
+      "trigger_mode": "implicit_or_explicit",
+      "explicit_prefix": "$dadm-deploy",
+      "safety_flags": {
+        "repo_local": true,
+        "writes_by_default": true
+      },
+      "sha256": "f95c3d002dfcd981c82e9dea4522249a9c6338b5521cced6a15764e0cb7fa8ef",
+      "last_scanned_utc": "2026-03-30T11:17:48.017965+00:00"
+    },
+    {
+      "type": "skill",
+      "path": ".agents/skills/dadm-discover/SKILL.md",
+      "name": "dadm-discover",
+      "description": "Use for repository research, audits, current-state mapping, milestone discovery, risk inventory, and fact-finding when implementation is not yet approved.",
+      "phase_scope": [
+        "discover"
+      ],
+      "trigger_mode": "implicit_or_explicit",
+      "explicit_prefix": "$dadm-discover",
+      "safety_flags": {
+        "repo_local": true,
+        "writes_by_default": false
+      },
+      "sha256": "3d23040b903e00e0887b49259884bcd3c727e8bb67ce7fd93d3da68778b2aab6",
+      "last_scanned_utc": "2026-03-30T11:17:48.017965+00:00"
+    },
+    {
+      "type": "skill",
+      "path": ".agents/skills/dadm-monitor/SKILL.md",
+      "name": "dadm-monitor",
+      "description": "Use for post-implementation validation, regression checks, release evidence, residual risk capture, and deciding the next bounded follow-up after deploy.",
+      "phase_scope": [
+        "monitor"
+      ],
+      "trigger_mode": "implicit_or_explicit",
+      "explicit_prefix": "$dadm-monitor",
+      "safety_flags": {
+        "repo_local": true,
+        "writes_by_default": false
+      },
+      "sha256": "986f060b2347c1dbf141944e5963381fd534d6d3c8faa3a52e652a02d880ab63",
+      "last_scanned_utc": "2026-03-30T11:17:48.017965+00:00"
+    }
+  ],
+  "agents": [
+    {
+      "type": "agent",
+      "path": ".codex/agents/dadm-orchestrator.toml",
+      "name": "dadm_orchestrator",
+      "description": "DAD-M planning and orchestration specialist for scoped discovery, design handoff, and bounded delegation.",
+      "model": "gpt-5.4",
+      "model_reasoning_effort": "medium",
+      "sandbox_mode": "read-only",
+      "mcp_servers": [],
+      "trigger_mode": "explicit_only",
+      "safety_flags": {
+        "read_only": true,
+        "uses_mcp": false
+      },
+      "sha256": "a2ed0e7e4757a9807de130f0e25fcf321f8ed76cb89589efb7b6890e26adcb36",
+      "last_scanned_utc": "2026-03-30T11:17:48.016861+00:00"
+    },
+    {
+      "type": "agent",
+      "path": ".codex/agents/docs-researcher.toml",
+      "name": "docs_researcher",
+      "description": "Read-only documentation specialist for official-source verification of APIs, frameworks, and Codex/OpenAI behavior.",
+      "model": "gpt-5.4-mini",
+      "model_reasoning_effort": "medium",
+      "sandbox_mode": "read-only",
+      "mcp_servers": [
+        "openaiDeveloperDocs"
+      ],
+      "trigger_mode": "explicit_only",
+      "safety_flags": {
+        "read_only": true,
+        "uses_mcp": true
+      },
+      "sha256": "96d0dae0b7243260d0eb9661283dbd7f6e6cebc5fe7692243292244c7325c161",
+      "last_scanned_utc": "2026-03-30T11:17:48.017965+00:00"
+    },
+    {
+      "type": "agent",
+      "path": ".codex/agents/reviewer.toml",
+      "name": "reviewer",
+      "description": "Read-only reviewer focused on correctness, regressions, security, missing tests, and DAD-M boundary violations.",
+      "model": "gpt-5.4",
+      "model_reasoning_effort": "high",
+      "sandbox_mode": "read-only",
+      "mcp_servers": [],
+      "trigger_mode": "explicit_only",
+      "safety_flags": {
+        "read_only": true,
+        "uses_mcp": false
+      },
+      "sha256": "e7cbad46be388041ecd719a34aa10cd9b4df23d9628f82fe0c61f4380bba88ba",
+      "last_scanned_utc": "2026-03-30T11:17:48.017943+00:00"
+    }
+  ]
+}

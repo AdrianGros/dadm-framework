@@ -9,6 +9,7 @@ Collect facts about the current state of the milestone.
 - inventory systems, files, dependencies, and constraints
 - identify risks, assumptions, and open questions
 - document evidence and current behavior
+- for agentic repos, inventory capabilities, trigger surfaces, and routing constraints
 
 ## Forbidden
 

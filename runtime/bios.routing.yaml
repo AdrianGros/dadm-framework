@@ -1,0 +1,200 @@
+version: 1
+
+intent_taxonomy:
+  research:
+    description: fact gathering, comparison, mapping, analysis, explanation
+    prompt_signals:
+      - research
+      - analyze
+      - explain
+      - inventory
+      - map
+      - compare
+      - audit
+  planning:
+    description: planning, architecture framing, design scoping, milestone shaping
+    prompt_signals:
+      - plan
+      - design
+      - architecture
+      - propose
+      - define
+      - outline
+  implementation:
+    description: code or configuration changes
+    prompt_signals:
+      - implement
+      - change
+      - edit
+      - add
+      - refactor
+      - fix
+  validation:
+    description: testing, review, auditing, regression checks, release evidence
+    prompt_signals:
+      - verify
+      - validate
+      - review
+      - test
+      - regressions
+      - monitor
+      - measure
+  documentation:
+    description: writing or aligning docs, runbooks, architecture records, requirements
+    prompt_signals:
+      - document
+      - write docs
+      - runbook
+      - brief
+      - requirements
+      - architecture document
+  release:
+    description: rollout, rollback, deployment, release gating
+    prompt_signals:
+      - release
+      - deploy
+      - rollout
+      - rollback
+      - go live
+
+phase_mapping:
+  discover:
+    primary_intents:
+      - research
+      - documentation
+    secondary_intents:
+      - validation
+    default_when:
+      - task asks for facts before design
+      - repo capabilities or prompt routing must be mapped
+      - external behavior must be verified before changes
+  apply:
+    primary_intents:
+      - planning
+    secondary_intents:
+      - documentation
+    default_when:
+      - current-state facts are already available
+      - the task is to define a target state, interfaces, or acceptance criteria
+  deploy:
+    primary_intents:
+      - implementation
+    secondary_intents:
+      - documentation
+      - validation
+    default_when:
+      - design is approved and code or config changes are explicitly requested
+  monitor:
+    primary_intents:
+      - validation
+      - release
+    secondary_intents:
+      - documentation
+    default_when:
+      - the task is to verify, review, measure, or close out work
+
+capability_selection:
+  automatic_context:
+    - AGENTS.md
+    - dadm-framework/runtime/AI_BIOS.md
+    - dadm-framework/runtime/file-registry.yaml
+
+  by_phase:
+    discover:
+      preferred_skills:
+        - dadm-discover
+      allowed_agents:
+        - dadm_orchestrator
+        - reviewer
+        - docs_researcher
+      edit_default: false
+      verify_sources_first: true
+    apply:
+      preferred_skills:
+        - dadm-apply
+      allowed_agents:
+        - dadm_orchestrator
+        - reviewer
+        - docs_researcher
+      edit_default: false
+      verify_sources_first: true
+    deploy:
+      preferred_skills:
+        - dadm-deploy
+      allowed_agents:
+        - reviewer
+        - docs_researcher
+      edit_default: true
+      verify_sources_first: false
+    monitor:
+      preferred_skills:
+        - dadm-monitor
+      allowed_agents:
+        - reviewer
+        - docs_researcher
+        - dadm_orchestrator
+      edit_default: false
+      verify_sources_first: true
+
+trigger_rules:
+  policies:
+    mode: automatic
+  skills:
+    mode: implicit_or_explicit
+    explicit_prefix: "$"
+    primary_match_fields:
+      - name
+      - description
+  subagents:
+    mode: explicit_only
+    prompt_signals:
+      - spawn
+      - delegate
+      - have reviewer
+      - one agent per point
+      - wait for all
+  mcp:
+    mode: on_demand
+    use_when:
+      - official documentation is required
+      - external tools or data are required
+      - primary-source verification is required
+
+safety_rules:
+  phase_barriers:
+    discover:
+      forbid:
+        - implementation without explicit phase change
+    apply:
+      forbid:
+        - implementation without explicit phase change
+    deploy:
+      forbid:
+        - new architecture decisions
+    monitor:
+      forbid:
+        - silent fixes
+  human_gates:
+    - unresolved critical finding
+    - unresolved high security or privacy finding
+    - cross-milestone scope expansion
+    - unclear strategic architecture tradeoff
+
+registry_refresh:
+  triggers:
+    - new or changed AGENTS.md
+    - new or changed skill metadata
+    - new or changed custom agent definitions
+    - changed project Codex config
+  persistence:
+    format: structured_registry
+    recommended_fields:
+      - path
+      - type
+      - name
+      - description
+      - phase_scope
+      - trigger_mode
+      - safety_flags
+      - sha256
+      - last_scanned_utc
