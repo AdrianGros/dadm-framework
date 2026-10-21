@@ -16,6 +16,14 @@ Implement the approved design and record proof.
 - silent dependency changes
 - silent scope expansion
 
+## Working rules
+
+- Record the starting commit (the review fixed point) before the first change.
+- Build in vertical slices: one failing test at an agreed seam, then the minimal code that
+  passes it.
+- After each slice run the fast checks (typecheck, lint, touched tests); run the full
+  suite once at the end.
+
 ## Required output
 
 - implementation summary

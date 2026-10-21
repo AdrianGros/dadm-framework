@@ -2,12 +2,8 @@
 
 ## Human decision triggers
 
-- any `critical` finding
-- any `high` or `critical` finding in `security` or `privacy`
-- cross-milestone scope change
-- dependency change outside approved safety boundaries
-- rework limit reached without resolution
-- strategic architecture tradeoff with no clearly correct option
+The triggers and the category overrides that require a human decision are listed under
+"Escalate when" in `runtime/cards/core-rules.md`.
 
 ## Action gate
 
@@ -17,8 +13,6 @@
 
 ## Rework
 
-- default limit: 2 attempts per finding per phase
-- if limit is exceeded, escalate to human decision
-
-Use `governance/governance-matrix.md` and `governance/rework-and-escalation.md`
-for canonical detail.
+Limit and reproduction rule: `runtime/cards/core-rules.md`. Load
+`governance/rework-and-escalation.md` when recording an attempt or escalating, and
+`governance/governance-matrix.md` when a finding's category or phase gate is unclear.

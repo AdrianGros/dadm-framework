@@ -60,7 +60,7 @@ It is most useful when work needs reviewable outputs, explicit scope boundaries,
 - `framework/templates/` — reusable framework templates
 - `governance/` — operating rules, evidence boundaries, and policies
 - `governance/policies/` — machine-readable (YAML) forms of governance rules
-- `runtime/` — AI runtime loader, profiles, and short execution cards
+- `runtime/` — AI runtime loader, profiles, short execution cards, and harness integration
 
 ### Core method
 
@@ -84,7 +84,8 @@ It is most useful when work needs reviewable outputs, explicit scope boundaries,
 | [governance/governance-matrix.md](governance/governance-matrix.md) | Which checks apply in which phase; blocking vs. advisory |
 | [governance/rework-and-escalation.md](governance/rework-and-escalation.md) | Intra-phase rework loop and escalation rules |
 | [governance/framework-change-process.md](governance/framework-change-process.md) | How to change framework documents (minor / significant / breaking) |
-| [governance/document-quality.md](governance/document-quality.md) | Quality criteria for each document type |
+| [governance/document-quality.md](governance/document-quality.md) | Quality criteria for each document type, including runtime cards |
+| [governance/security-baseline.md](governance/security-baseline.md) | Secrets, untrusted content, dependencies, side-effect commands, security review checklist |
 | [governance/policies/severity-policy.yaml](governance/policies/severity-policy.yaml) | Severity level actions and category overrides (machine-readable) |
 | [governance/policies/human-decision-policy.yaml](governance/policies/human-decision-policy.yaml) | Human decision triggers and format (machine-readable) |
 | [governance/policies/rework-policy.yaml](governance/policies/rework-policy.yaml) | Rework conditions, limit, escalation (machine-readable) |
@@ -99,6 +100,7 @@ It is most useful when work needs reviewable outputs, explicit scope boundaries,
 | [framework/templates/discover-output.md](framework/templates/discover-output.md) | Template for Discover phase output records |
 | [framework/templates/apply-output.md](framework/templates/apply-output.md) | Template for Apply phase output records |
 | [framework/templates/rework-plan.md](framework/templates/rework-plan.md) | Template for intra-phase rework plans (MR1–MRn) |
+| [framework/templates/milestone-record.md](framework/templates/milestone-record.md) | Single milestone record for the `fastdev` profile |
 
 ### Documentation
 
@@ -106,6 +108,7 @@ It is most useful when work needs reviewable outputs, explicit scope boundaries,
 | --- | --- |
 | [runtime/AI_BIOS.md](runtime/AI_BIOS.md) | Runtime loader entry point for AI systems |
 | [runtime/file-registry.yaml](runtime/file-registry.yaml) | Runtime document registry with profiles, routes, and opt-in references |
+| [runtime/integration/README.md](runtime/integration/README.md) | Wiring DAD-M into an agent harness: minimal pointer, guard hook |
 | [AI_CONTEXT.md](AI_CONTEXT.md) | Compact structured summary for humans and general AI overview |
 | [docs/overview.md](docs/overview.md) | Concise method overview including design assumption |
 | [docs/methodology.md](docs/methodology.md) | Methodological positioning, design assumption, comparison table |
@@ -116,7 +119,9 @@ It is most useful when work needs reviewable outputs, explicit scope boundaries,
 | [docs/glossary.md](docs/glossary.md) | Canonical term definitions |
 | [docs/examples/rbac-case-example.md](docs/examples/rbac-case-example.md) | Full structured milestone example with phase outputs and decision log |
 | [docs/variants/education.md](docs/variants/education.md) | DAD-M Education variant |
-| [docs/decisions/MILESTONE_PLAN_V1.md](docs/decisions/MILESTONE_PLAN_V1.md) | Approved milestone plan for this repository (v1.0) |
+| [docs/integrations/mattpocock-skills.md](docs/integrations/mattpocock-skills.md) | Evaluation and phase mapping of the mattpocock/skills agent skills |
+| [docs/decisions/](docs/decisions/) | Framework change records and human decision records |
+| [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) | Licenses of adapted third-party material |
 
 ## Example usage / workflow
 

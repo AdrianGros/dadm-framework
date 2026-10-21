@@ -146,6 +146,13 @@ The planned outputs listed in a milestone's definition — what artifacts must e
 when the milestone is complete. This is a planning field, not a phase output format.
 Compare: **Deliverable (phase output)**.
 
+## Milestone Record
+
+The single human-readable artifact per milestone under the `fastdev` profile. One section
+per phase replaces the separate phase outputs, rework records, and decision log; human
+decision records stay separate. Immutable once the milestone is completed.
+See: `framework/templates/milestone-record.md`.
+
 ## Module
 
 A self-contained check unit that runs during one or more phases, receives input
@@ -177,8 +184,10 @@ A classification of a milestone's urgency relative to other milestones:
 
 A named configuration that activates a specific subset of modules and optionally
 overrides severity defaults. Profiles adapt the governance intensity to the project
-context without changing the core framework.
-See: `framework/core/modules.md`.
+context without changing the core framework. The same names select the runtime document
+set and, where a profile file declares it, artifact and gate behaviour: `fast`,
+`fastdev`, `development`, `standard` (default), `strict`.
+See: `framework/core/modules.md`, `runtime/AI_BIOS.md`.
 
 ## Proof
 

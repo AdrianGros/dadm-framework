@@ -17,6 +17,10 @@ Collect facts about the current state of the milestone.
 - choosing architecture
 - writing implementation code as the solution
 
+## Working rules
+
+- Park solution ideas as open questions for Apply.
+
 ## Required output
 
 - current-state summary

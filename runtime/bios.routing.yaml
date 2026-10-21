@@ -97,12 +97,20 @@ capability_selection:
   automatic_context:
     - AGENTS.md
     - dadm-framework/runtime/AI_BIOS.md
-    - dadm-framework/runtime/file-registry.yaml
 
+  # compatible_external_skills: skills from mattpocock/skills that fit the phase when
+  # installed (docs/integrations/mattpocock-skills.md). Route to them only if the
+  # workspace registry lists them; user-invoked ones are recommended, not invoked.
   by_phase:
     discover:
       preferred_skills:
         - dadm-discover
+      compatible_external_skills:
+        - research
+        - grilling
+        - grill-with-docs
+        - grill-me
+        - domain-modeling
       allowed_agents:
         - dadm_orchestrator
         - reviewer
@@ -112,6 +120,10 @@ capability_selection:
     apply:
       preferred_skills:
         - dadm-apply
+      compatible_external_skills:
+        - codebase-design
+        - prototype
+        - domain-modeling
       allowed_agents:
         - dadm_orchestrator
         - reviewer
@@ -121,6 +133,10 @@ capability_selection:
     deploy:
       preferred_skills:
         - dadm-deploy
+      compatible_external_skills:
+        - tdd
+        - diagnosing-bugs
+        - wizard
       allowed_agents:
         - reviewer
         - docs_researcher
@@ -129,12 +145,22 @@ capability_selection:
     monitor:
       preferred_skills:
         - dadm-monitor
+      compatible_external_skills:
+        - code-review
+        - diagnosing-bugs
+        - retro
       allowed_agents:
         - reviewer
         - docs_researcher
         - dadm_orchestrator
       edit_default: false
       verify_sources_first: true
+
+  cross_phase_external_skills:
+    human_decision:
+      - to-questionnaire
+    phase_transition:
+      - handoff
 
 trigger_rules:
   policies:
@@ -145,6 +171,9 @@ trigger_rules:
     primary_match_fields:
       - name
       - description
+    user_invoked_only:
+      # frontmatter disable-model-invocation: true (registry trigger_mode explicit_only)
+      action: recommend_to_human
   subagents:
     mode: explicit_only
     prompt_signals:

@@ -26,6 +26,8 @@ Decide what the AI-assisted workflow may and may not touch:
 - whether dependency changes are allowed
 - whether network access is allowed
 - which proofs are required
+- which profile is active (`standard` by default; `fastdev` for fast coding with one
+  record per milestone)
 
 ## 3. Declare scope
 

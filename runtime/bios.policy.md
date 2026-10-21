@@ -100,6 +100,11 @@ Resolve:
 - `AGENTS.md` is automatic context and does not need an explicit trigger.
 - Skills may be used implicitly through strong `description` matches or explicitly through
   a direct `$skill-name` invocation.
+- A skill with `disable-model-invocation: true` is user-invoked: BIOS recommends it to the
+  human and does not invoke it.
+- External skill packs (for example mattpocock/skills) are mapped to phases in
+  `runtime/bios.routing.yaml` under `compatible_external_skills`; BIOS routes to them only
+  when the workspace registry lists them.
 - Subagents should be treated as explicit delegation only.
 - MCP-backed capabilities should be resolved when the task depends on external context,
   official documentation, or system tooling beyond the repo itself.

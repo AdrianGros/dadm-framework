@@ -17,6 +17,14 @@ Rework conditions — all must apply:
 - no category override requires a human decision
 - the rework attempt counter has not reached the limit
 
+### Reproduce first
+
+Each rework attempt must start from one command that reproduces the finding (a failing
+test, script, or check) and must end when the same command passes. If no such command
+can be built, the attempt record must state why. Reason: a fix without a reproduction
+cannot show that it addressed the finding, and unverified attempts use up the limit
+without information. (Adapted from `diagnosing-bugs` in mattpocock/skills.)
+
 ### Rework limit
 
 The default rework limit is **2 attempts** per finding within a phase.
@@ -72,6 +80,7 @@ Each rework attempt is recorded in the phase output:
 rework-attempt:
   finding-ref: <reference to the original finding>
   attempt: <number>
+  reproduction: <command that fails on the finding, or why none exists>
   action-taken: <what was changed>
   result: resolved | unresolved
 ```
@@ -80,7 +89,8 @@ If the result is `unresolved` after the limit, add an escalation entry and stop.
 
 Rework attempt records appear in the phase output under the Artifacts section with
 retention class `immutable`. For the full phase output structure, see
-`framework/core/deliverables.md`.
+`framework/core/deliverables.md`. Under the `fastdev` profile, each attempt is one line in
+the Log section of the milestone record.
 
 ## Relationship to other documents
 

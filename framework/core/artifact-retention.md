@@ -22,7 +22,10 @@ For the term *Artifact*, see `docs/glossary.md`.
 | Approval record | `immutable` |
 | Human decision record | `immutable` |
 | Rework attempt record | `immutable` |
+| Completed milestone record (`fastdev`) | `immutable` |
+| Filled phase section of an active milestone record (`fastdev`) | `immutable` |
 | Active milestone plan (in progress) | `versioned` |
+| Header and Log of an active milestone record (`fastdev`); the Log is append-only | `mutable` |
 | Architecture documents | `versioned` |
 | Working notes and drafts | `mutable` |
 | Risk register (open milestone) | `mutable` |
@@ -38,6 +41,21 @@ If a decision turns out to be wrong, the correct response is:
 1. Record a new artifact that supersedes the previous one.
 2. Reference the original artifact from the new one.
 3. Leave the original unchanged.
+
+## Exception: secrets and personal data
+
+Immutability must not preserve a secret or personal data that should never have been
+recorded. If an immutable artifact contains one:
+
+1. Record the finding (a secret: `security`, at least `high`; personal data: `privacy`,
+   at least `medium`) and stop for a human decision (`governance/guardrails.md`).
+2. The human rotates or revokes the secret, or decides how the personal data is handled.
+3. Replace only the sensitive value with `<REDACTED>`, leave everything else unchanged,
+   and reference the human decision record.
+
+This is the only permitted edit of an immutable artifact. Reason: a retained secret stays
+exploitable for as long as the record exists, which outweighs the record's evidence
+value for that one value (`governance/security-baseline.md`).
 
 ## Practical guidance
 

@@ -6,7 +6,8 @@ The DAD-M source material is strict about scope control. These guardrails keep t
 
 - collect facts before proposing a solution
 - keep Discover limited to analysis and inventory
-- keep Apply limited to design
+- keep Apply limited to design; a throwaway prototype that answers a design question
+  counts as design
 - keep Deploy limited to implementing the approved design
 - do not introduce new architecture decisions during Deploy
 - do not make critical assumptions when an answer is missing
@@ -14,6 +15,8 @@ The DAD-M source material is strict about scope control. These guardrails keep t
 - treat dependency changes and network use as explicit permissions, not defaults
 - record risks and assumptions instead of hiding them
 - produce reproducible outputs with concrete artifacts and proofs
+- handle secrets, untrusted content, dependencies, and side-effect commands as defined in
+  `governance/security-baseline.md`
 
 For software implementations, scope compliance and other operating rules are enforced
 through the module framework defined in `framework/core/modules.md`.

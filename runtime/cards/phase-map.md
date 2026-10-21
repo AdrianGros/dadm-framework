@@ -36,3 +36,10 @@ Before moving to the next phase:
 - no open `medium` or higher finding remains unresolved or unaccepted
 - no pending human decision remains
 - closed phase output becomes `immutable`
+
+## Context at a transition
+
+The closed phase output is the handoff to the next phase. Recommend the cheapest fitting
+move to the human: continue when the next phase needs this session's reasoning and it fits
+the window; a fresh session from the closed output when it does not; a subagent for review
+or research. Load `framework/core/bootstrap.md` (Working mode) when the choice is unclear.

@@ -15,6 +15,8 @@ This process applies when:
 - a governance document (`governance/`) is added or substantively changed
 - a template (`framework/templates/`) is added or changed
 - a policy file (`governance/policies/`) is added or changed
+- a runtime document (`runtime/`: BIOS, registry, profiles, cards, integration files) is
+  added or substantively changed
 - a document in `docs/` introduces a new normative statement
 
 It does not apply to:
@@ -80,6 +82,10 @@ After any framework change, verify:
 - [ ] No normative statement is added without a traceable reason.
 - [ ] If a conflict with an existing document is introduced, it is documented in
       `docs/decisions/` before the change is finalized.
+- [ ] The load table in `runtime/AI_BIOS.md` matches `runtime/file-registry.yaml` and
+      `runtime/profiles/*.yaml`.
+- [ ] Changed runtime cards meet the runtime card criteria in
+      `governance/document-quality.md`.
 
 ---
 
