@@ -5,7 +5,7 @@ The operational core of DAD-M is a four-phase cycle that is repeated per milesto
 | Phase | Main goal | Typical artifacts | Boundary |
 | --- | --- | --- | --- |
 | Discover | Understand the current state | system overview, file inventory, dependencies, risks, open questions | no solution design |
-| Apply | Design the solution | architecture, interfaces, data models, pseudocode, acceptance criteria | no implementation |
+| Apply | Design the solution | architecture, interfaces, data models, pseudocode, acceptance criteria | no implementation (throwaway prototypes that answer a design question are allowed) |
 | Deploy | Build the approved design | code, documentation, scripts, configuration, implementation report, proofs | no new architecture decisions |
 | Monitor | Validate and review | test results, error analysis, regression risks, recommended fixes | no silent scope expansion |
 
@@ -36,6 +36,12 @@ Before moving from one phase to the next, confirm:
 
 Only then begin the next phase.
 
+Under the `fastdev` profile, each phase output is a section of one milestone record
+(`framework/core/deliverables.md`): a filled section counts as closed and is `immutable`.
+Rework of `medium` findings without a category override may wait until Monitor; findings
+still unresolved when the milestone completes need a human decision
+(`runtime/profiles/fastdev.yaml`).
+
 ## Discover
 
 Discover is an inventory phase. The goal is to gather facts and constraints before any design starts.
@@ -57,6 +63,10 @@ Expected outcomes:
 - data or interface design
 - pseudocode or workflow plan
 - updated acceptance criteria
+
+A throwaway prototype that answers one design question is design evidence, not
+implementation: it stays outside the deliverable, and only its answer enters the Apply
+output.
 
 ## Deploy
 

@@ -33,6 +33,8 @@ to this full document only when the card is insufficient.
 - whether dependency changes are allowed
 - whether network access is allowed
 - which proofs are mandatory
+- which profile is active: `fast`, `fastdev`, `development`, `standard`, or `strict`
+  (default `standard`; see `runtime/AI_BIOS.md`)
 
 ### Scope declaration
 
@@ -55,6 +57,9 @@ For each milestone define:
 - dependencies
 - priority
 
+Size each milestone as a vertical slice (see `framework/core/milestones.md`, Milestone
+sizing).
+
 ### Approval checkpoint
 
 After the milestone plan is written, obtain explicit approval before starting M1.
@@ -75,6 +80,24 @@ create a new version and obtain a new approval. The old approval remains on reco
 
 The operative (machine-readable) form of this approval rule is in
 `governance/policies/approval-policy.yaml`.
+
+### Working mode
+
+Decide whether planning and implementation share one session (`one_chat`) or run in
+separate sessions (`separate_chats`). Revisit the choice at every phase transition: the
+closed phase output is the handoff document either way. Take the first option that fits:
+
+1. **Continue** in the session when the next phase needs this session's reasoning
+   verbatim and the remaining context window holds it.
+2. **Fresh session** from the closed phase output when the session's exploration is no
+   longer needed. This is the cheapest option in tokens.
+3. **Handoff file** only when the work moves to another tool, directory, or person.
+4. **Subagent** for work that runs without steering, such as a review or research.
+5. **Compact** the session with an instruction that names the next phase, otherwise.
+
+Every option except Continue replaces the session with a summary, so decide at a phase
+transition, not in the middle of a phase. This order is adapted from
+`ask-matt/PHASE-BOUNDARIES.md` in mattpocock/skills (`THIRD_PARTY_NOTICES.md`).
 
 ## Starter prompt skeleton
 
@@ -125,7 +148,8 @@ Ask the user the following setup questions. Format them clearly and numbered:
 5. Timeframe — if relevant, otherwise "not relevant"
 6. Non-goals — what is explicitly out of scope?
 
-Output only the questions, no additional explanation.
+Add a recommended answer to each question where the context allows one, so the user
+can reply "yes" to accept it. No additional explanation.
 ```
 
 ### Setup Phase 2 — Safety Boundaries
@@ -141,8 +165,11 @@ Ask the user the following questions, numbered:
 4. Network access — allowed during development?
 5. Mandatory proofs — which evidence is required per milestone?
 6. Preferred milestone size — coarse (few large) or fine (many small)?
+7. Active profile — fast, fastdev, development, standard, or strict (default: standard)?
 
-Output only the questions, no additional explanation.
+Add a recommended answer to each question so the user can reply "yes" to accept it: the
+most restrictive option for questions 1 to 5, the framework default for 6 and 7. No
+additional explanation.
 ```
 
 ### Prompt chain — from setup to M1

@@ -10,6 +10,8 @@ Turn discovered facts into an explicit solution design.
 - data model and workflow definition
 - acceptance criteria refinement
 - design tradeoff analysis
+- throwaway prototype code that answers one design question; record the answer and keep
+  the code out of the deliverable
 
 ## Forbidden
 
@@ -22,6 +24,8 @@ Turn discovered facts into an explicit solution design.
 - solution design aligned to Discover facts
 - assumptions and tradeoffs
 - acceptance criteria and planned artifacts
+- test seams: the public interface where each acceptance criterion will be proven
+- explicit out-of-scope list
 - explicit handoff into Deploy
 
 ## Escalate when

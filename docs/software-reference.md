@@ -271,7 +271,7 @@ The active profile controls which modules run and at what strictness level.
 Declare in safety boundaries:
 
 ```
-active-profile: standard | strict | development | fast
+active-profile: standard | strict | development | fastdev | fast
 ```
 
 If not declared, `standard` applies.

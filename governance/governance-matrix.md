@@ -67,6 +67,17 @@ These override the default decision flow regardless of phase:
 | Cross-milestone change | any severity → human decision |
 | Architecture decision in Deploy | any severity → stop, return to Apply |
 
+## Profile adjustments
+
+By default, `medium` findings must be resolved or accepted before the phase transition.
+A profile file that sets `resolve_by: milestone_completed` for `medium` moves this gate
+to milestone completion, as `fastdev` does (`runtime/profiles/fastdev.yaml`); findings
+still unresolved at completion then require a human decision (`governance/guardrails.md`).
+A profile must not relax the human decision triggers or the category overrides above for
+security, privacy, scope, cross-milestone changes, and architecture decisions in Deploy.
+Reason: these categories carry irreversible or external consequences that speed does not
+justify.
+
 ## Advisory findings
 
 Advisory findings are not ignored. They are:

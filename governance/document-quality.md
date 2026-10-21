@@ -15,6 +15,7 @@ All criteria are checkable without automated tooling.
 | Governance | `governance/*.md` |
 | Policy | `governance/policies/*.yaml` |
 | Template | `framework/templates/*.md` |
+| Runtime card | `runtime/cards/*.md` |
 | Docs | `docs/*.md`, `docs/**/*.md` |
 | Decision | `docs/decisions/*.md` |
 
@@ -51,6 +52,24 @@ All criteria are checkable without automated tooling.
 3. The template states its retention class (immutable / versioned / mutable).
 4. The template cross-references the governance or core document that defines its trigger or context.
 
+## Runtime cards
+
+Runtime cards are loaded automatically for a profile or route, so every line costs tokens
+on every load. These criteria are adapted from `writing-for-agents` in mattpocock/skills.
+
+1. The card stays under 300 words (`wc -w runtime/cards/*.md`) and points to canonical
+   detail instead of copying it.
+2. Each rule appears once in the documents a profile loads. A rule every profile needs
+   lives in `core-rules.md`; other cards point to it.
+3. A prohibition is paired with the positive target (for example "park solution ideas as
+   open questions for Apply" next to "no solution design").
+4. Every line changes agent behaviour compared with the model's default; lines that do
+   not are removed.
+5. A pointer to another document states the condition for loading it.
+6. Facts the environment already holds (configuration, scripts, version control) are
+   referenced, not restated.
+7. The card does not contradict the canonical framework or governance documents.
+
 ## Docs (public-facing)
 
 1. The document does not introduce terminology not found in the glossary or not defined inline.
@@ -66,6 +85,9 @@ All criteria are checkable without automated tooling.
 3. Risk entries carry a severity label.
 4. All referenced gap IDs or finding IDs are traceable to the document that introduced them.
 5. The document is append-only after it is marked closed.
+
+Human decision records stored in `docs/decisions/` follow
+`framework/templates/human-decision-record.md`; criteria 1 to 3 do not apply to them.
 
 ---
 

@@ -1,0 +1,53 @@
+profile: fastdev
+inherits: []
+intent: Fast coding with one human-readable record per milestone; human decisions stay separate.
+auto_load:
+  - runtime/cards/core-rules.md
+  - runtime/cards/fastdev-card.md
+routes_from_registry: runtime/file-registry.yaml
+
+# Behaviour that differs from the other profiles. Anything not listed follows the
+# canonical framework and governance documents.
+artifacts:
+  per_milestone: one_record
+  record_template: framework/templates/milestone-record.md
+  record_retention:
+    filled_phase_section: immutable
+    header: mutable
+    log: append_only
+    on_completed: immutable
+  content_of_other_files: into_record   # research notes, decision notes, glossary terms
+  replaces:
+    - discover-output
+    - apply-output
+    - deploy-output
+    - monitor-output
+    - rework-plan
+    - rework-attempt-record
+    - decision-log
+  kept_separate:
+    - human-decision-record
+  unchanged:
+    - bootstrap artifacts, including milestone-plan-approval
+
+governance:
+  human_decision_triggers: unchanged
+  category_overrides: unchanged
+  high:
+    action: rework
+    resolve_by: next_phase_transition
+  medium:
+    action: rework
+    resolve_by: milestone_completed
+    unresolved_at_completion: human_decision
+    except_categories:   # these keep their override at any severity
+      - security
+      - privacy
+      - scope_violation
+      - cross_milestone_change
+      - architecture_decision_in_deploy
+  rework_limit: 2
+
+review:
+  axes: [spec, security]
+  mode: single_pass

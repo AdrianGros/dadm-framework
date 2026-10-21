@@ -3,7 +3,8 @@
 # When the two conflict, update both and resolve the conflict explicitly.
 # Action vocabulary: allow | allow_with_notes | rework | escalate | block | human_decision
 
-version: 1
+version: 2
+# Version 2 (2026-10-19): `reproduction` became a required field of the attempt record.
 
 default_rework_limit: 2
 
@@ -22,10 +23,17 @@ escalation_triggers:
 
 escalation_action: human_decision
 
+attempt_requirements:
+  # Each attempt starts from a command that reproduces the finding and ends when
+  # the same command passes; if none can be built, the record states why.
+  - start_from_reproducing_command
+  - end_when_reproducing_command_passes
+
 rework_attempt_record:
   required_fields:
     - finding_ref
     - attempt
+    - reproduction   # the reproducing command, or why none exists
     - action_taken
     - result
   allowed_result_values:

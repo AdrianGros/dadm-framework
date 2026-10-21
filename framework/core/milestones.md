@@ -27,6 +27,21 @@ A milestone is described through a stable set of fields:
 
 Milestones keep the framework practical. They prevent one large, vague request from mixing analysis, design, implementation, and review in a single step.
 
+## Milestone sizing
+
+By default, size each milestone as a vertical slice:
+
+- it cuts a narrow but complete path through every layer it touches (data, logic,
+  interface, tests) instead of finishing one layer at a time
+- its result is verifiable on its own
+- it is small enough that each of its phases fits one fresh agent session
+- preparatory refactoring comes first, as its own milestone or as the first slice
+
+Reason: a small, self-contained milestone keeps each session's context small and gives
+the agent a short feedback loop, which is expected to lower both token use and error rate. This is a
+design decision adapted from the tracer-bullet rules of `to-tickets` in mattpocock/skills
+(`THIRD_PARTY_NOTICES.md`), not an empirically measured threshold.
+
 ## Milestone plan versioning
 
 Milestone plans are stored in `docs/decisions/` and follow a version header:

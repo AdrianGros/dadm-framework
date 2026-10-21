@@ -19,7 +19,9 @@ Assign a severity level whenever you record a risk, finding, or open question in
 a phase output. The level signals what happens next:
 
 - `info` and `low` go into the Risks and Assumptions section with no further action gate.
-- `medium` and `high` must be resolved or explicitly accepted before the next phase begins.
+- `medium` and `high` must be resolved or explicitly accepted before the next phase begins
+  (profile `fastdev`: `medium` by milestone completion; see
+  `governance/governance-matrix.md`, Profile adjustments).
 - `critical` triggers an immediate stop. Work does not continue until a human has reviewed
   the situation and recorded a decision.
 

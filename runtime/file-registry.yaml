@@ -1,6 +1,10 @@
 version: 1
 default_profile: standard
 
+# Machine-readable load sets for tools. Agents use the load table in runtime/AI_BIOS.md;
+# keep both in sync. Route loads apply to every profile unless the profile lists
+# route_overrides. A document in both a profile's auto_load and a route is loaded once.
+
 profiles:
   fast:
     description: Minimum runtime context for quick, low-overhead iteration.
@@ -9,6 +13,26 @@ profiles:
       - runtime/cards/phase-map.md
       - runtime/cards/deliverables-min.md
     allow_on_demand:
+      - framework/core/bootstrap.md
+      - framework/core/milestones.md
+      - governance/guardrails.md
+      - governance/governance-matrix.md
+      - governance/security-baseline.md
+
+  fastdev:
+    description: Fast coding with one human-readable record per milestone; human decisions stay separate.
+    auto_load:
+      - runtime/cards/core-rules.md
+      - runtime/cards/fastdev-card.md
+    route_overrides:
+      discover: []
+      apply: []
+      deploy: []
+      monitor:
+        - runtime/cards/review-card.md
+    allow_on_demand:
+      - framework/templates/milestone-record.md
+      - governance/security-baseline.md
       - framework/core/bootstrap.md
       - framework/core/milestones.md
       - governance/guardrails.md
@@ -28,6 +52,7 @@ profiles:
       - governance/guardrails.md
       - governance/governance-matrix.md
       - governance/rework-and-escalation.md
+      - governance/security-baseline.md
 
   standard:
     description: Default balanced runtime profile for normal milestone work.
@@ -44,6 +69,7 @@ profiles:
       - governance/guardrails.md
       - governance/governance-matrix.md
       - governance/rework-and-escalation.md
+      - governance/security-baseline.md
 
   strict:
     description: High-assurance mode with stronger governance context loaded by default.
@@ -61,6 +87,7 @@ profiles:
       - framework/core/milestones.md
       - framework/core/deliverables.md
       - governance/guardrails.md
+      - governance/security-baseline.md
 
 routes:
   bootstrap:
@@ -70,22 +97,19 @@ routes:
   discover:
     load:
       - runtime/cards/discover-card.md
-      - runtime/cards/deliverables-min.md
 
   apply:
     load:
       - runtime/cards/apply-card.md
-      - runtime/cards/deliverables-min.md
 
   deploy:
     load:
       - runtime/cards/deploy-card.md
-      - runtime/cards/deliverables-min.md
 
   monitor:
     load:
       - runtime/cards/monitor-card.md
-      - runtime/cards/deliverables-min.md
+      - runtime/cards/review-card.md
 
   human_decision:
     load:
@@ -98,12 +122,19 @@ document_classes:
     - runtime/cards/phase-map.md
     - runtime/cards/deliverables-min.md
     - runtime/cards/governance-min.md
+    - runtime/cards/fastdev-card.md
     - runtime/cards/bootstrap-card.md
     - runtime/cards/discover-card.md
     - runtime/cards/apply-card.md
     - runtime/cards/deploy-card.md
     - runtime/cards/monitor-card.md
+    - runtime/cards/review-card.md
     - runtime/cards/human-decision-card.md
+
+  runtime_control_plane:
+    - runtime/bios.policy.md
+    - runtime/bios.routing.yaml
+    - runtime/bios.registry.json
 
   reference_canonical:
     - framework/core/bootstrap.md
@@ -113,6 +144,7 @@ document_classes:
     - governance/guardrails.md
     - governance/governance-matrix.md
     - governance/rework-and-escalation.md
+    - governance/security-baseline.md
 
   human_docs:
     - README.md
@@ -125,3 +157,4 @@ never_auto_load:
   - docs/glossary.md
   - docs/methodology.md
   - docs/software-reference.md
+  - docs/integrations/*

@@ -125,6 +125,9 @@ Modules are self-contained checks that run during one or more phases. Each modul
 - maps to the governance matrix (blocking or advisory per phase)
 
 Default profile: `standard`. Override in safety boundaries with `active-profile: <name>`.
+Profiles: `fast`, `fastdev`, `development`, `standard`, `strict` (see `runtime/AI_BIOS.md`).
+`fastdev` writes one milestone record per milestone instead of separate phase outputs;
+human decision records stay separate.
 
 ---
 
@@ -150,12 +153,15 @@ Use runtime cards as the default loading surface:
 - `runtime/cards/deliverables-min.md`
 - `runtime/cards/governance-min.md`
 
+Profile `fastdev` loads only `runtime/cards/core-rules.md` and
+`runtime/cards/fastdev-card.md`; the load table in `runtime/AI_BIOS.md` is authoritative.
+
 Load route cards for `bootstrap`, `discover`, `apply`, `deploy`, `monitor`, or
 `human_decision`. Full framework and governance documents are on-demand references,
 not the default runtime load.
 
-Never auto-load: `docs/examples/*`, `docs/glossary.md`, `docs/methodology.md`,
-`docs/software-reference.md`.
+Never auto-load: `docs/examples/*`, `docs/integrations/*`, `docs/glossary.md`,
+`docs/methodology.md`, `docs/software-reference.md`.
 
 ## Bootstrap sequence (authoritative: `framework/core/bootstrap.md`)
 
@@ -191,6 +197,11 @@ are in `framework/core/bootstrap.md` under "Operational prompt templates".
 | Discover output template | `framework/templates/discover-output.md` |
 | Apply output template | `framework/templates/apply-output.md` |
 | Rework plan template | `framework/templates/rework-plan.md` |
+| Milestone record template (`fastdev`) | `framework/templates/milestone-record.md` |
+| Security rules and review checklist | `governance/security-baseline.md` |
+| Review protocol | `runtime/cards/review-card.md` |
+| Harness integration, guard hook | `runtime/integration/README.md` |
+| mattpocock/skills evaluation | `docs/integrations/mattpocock-skills.md` |
 | Glossary | `docs/glossary.md` |
 | Software integration guide | `docs/software-reference.md` |
 | Methodology overview | `docs/methodology.md` |

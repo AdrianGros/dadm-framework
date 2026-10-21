@@ -76,6 +76,7 @@ Suggested profile names:
 | `strict` | Production or regulated environments; all blocking checks active |
 | `standard` | Regular project work; default configuration |
 | `development` | Local iteration; reduced blocking checks |
+| `fastdev` | Fast coding with one milestone record; security, privacy, and scope checks stay blocking |
 | `fast` | Rapid prototyping; minimum required checks only |
 
 A profile is declared in the project's safety boundaries:
@@ -88,7 +89,7 @@ If no profile is declared, `standard` applies. This default is a design choice: 
 is intended to represent a balanced starting point — active enough to catch significant
 findings in typical project work, but not so restrictive that it blocks routine iterations.
 Projects that require stronger controls should declare `strict` explicitly; projects that
-need faster iteration should declare `development` or `fast`. Leaving the choice implicit
+need faster iteration should declare `development`, `fastdev`, or `fast`. Leaving the choice implicit
 (no profile declared) defaults to `standard` as a conservative middle ground rather than
 the least restrictive option.
 
@@ -96,7 +97,8 @@ The same profile names may also be used by a document-loading registry for AI ru
 context. In this repository, that runtime layer is defined in `runtime/file-registry.yaml`
 and starts from `runtime/AI_BIOS.md`. Module profiles and document-load profiles are
 parallel concepts: one selects checks, the other selects which framework documents are
-loaded by default.
+loaded by default and, where its profile file declares it (as `fastdev` does), artifact
+and gate behaviour.
 
 ## Writing a new module
 
